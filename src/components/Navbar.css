@@ -1,0 +1,27 @@
+.headLogo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0
+}
+
+.headLogo .line{
+    background: #fff;
+    width: 18rem;
+    height: 1px;
+}
+
+.headLogo .secondLine{
+    background: #fff;
+    width: 16rem;
+    height: 1px;
+    margin: 5px 0;
+}
+
+.headLogo .logo span{
+    color: white;
+    text-transform: uppercase;
+    font-size: 54px;
+}
