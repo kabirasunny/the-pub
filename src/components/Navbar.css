@@ -1,3 +1,4 @@
+/* ====================Section logo - Start================================= */
 .headLogo{
     display: flex;
     flex-direction: column;
@@ -24,4 +25,41 @@
     color: white;
     text-transform: uppercase;
     font-size: 54px;
+    cursor: pointer;
 }
+
+.headLogo .logoPara p{
+    color: #fff;
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+ /* ====================Section logo - End=================================  */
+ /* ====================Section Navbar - Start================================= */
+
+.navbar{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar .navList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.navbar .navList a li{
+    list-style: none;
+}
+
+.navbar .navList a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+/* ====================Section Navbar - Start================================= */
