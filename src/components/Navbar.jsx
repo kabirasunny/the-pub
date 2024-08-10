@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import { FaCartPlus,FaUserPlus  } from "react-icons/fa";
 
 const Navbar = () => {
     return (
@@ -16,14 +17,18 @@ const Navbar = () => {
             {/* ====================Section logo - End================================= */}
             {/* ====================Section Navbar - Start================================= */}
             <section className="navbar">
-                    <ul className='navList'>
-                        <a href=""><li>Home</li></a>
-                        <a href=""><li>Menu</li></a>
-                        <a href=""><li>Order Online</li></a>
-                        <a href=""><li>Events</li></a>
-                        <a href=""><li>About Us</li></a>
-                        <a href=""><li>Gallary</li></a>
-                    </ul>
+                <ul className='navList'>
+                    <a href=""><li>Home</li></a>
+                    <a href=""><li>Menu</li></a>
+                    <a href=""><li>Order Online</li></a>
+                    <a href=""><li>Events</li></a>
+                    <a href=""><li>About Us</li></a>
+                    <a href=""><li>Gallary</li></a>
+                </ul>
+                <div className="loginCart">
+                    <a href="" className='icart'><FaUserPlus /></a>
+                    <a href="" className='icart'><FaCartPlus /></a>
+                </div>
             </section>
             {/* ====================Section Navbar - End================================= */}
         </>
