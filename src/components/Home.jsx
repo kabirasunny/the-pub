@@ -49,6 +49,41 @@ const Home = () => {
             </section>
 
             {/* ====================Section Card End========================= */}
+            {/* ====================Section Reserve-Table Start========================= */}
+            <section className="reserveTbl">
+                <h1 className='reserveTitle'>Reserve Table</h1>
+                <form action="">
+                    <div className="partySize">
+                        <select name="" id="">
+                            <option value="1 guest">1 Guest</option>
+                            <option value="2 guests">2 Guests</option>
+                            <option value="3 guests">3 Guests</option>
+                            <option value="4 guests">4 Guests</option>
+                            <option value="5 guests">5 Guests</option>
+                            <option value="6 guests">6 Guests</option>
+                        </select>
+                    </div>
+                    <div className="date">
+                        <input type="date" name="" id="" placeholder='Date' />
+                    </div>
+                    <div className='time'>
+                        <select name="" id="">
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="12:15 PM">12:15 PM</option>
+                            <option value="12:30 PM">12:30 PM</option>
+                            <option value="12:45 PM">2:45 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="1:15 PM">1:15 PM</option>
+                            <option value="1:30 PM">1:30 PM</option>
+                        </select>
+                    </div>
+                    <div className="fdTable">
+                        <a href="">Find a Table</a>
+                    </div>
+                </form>
+                <div className="reserveTableLine"><div></div></div>
+            </section>
+            {/* ====================Section Reserve-Table End========================= */}
         </>
     )
 }
