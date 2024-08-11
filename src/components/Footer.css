@@ -1,0 +1,77 @@
+.footerSection {
+    background-color: white;
+    width: 74%;
+    margin: 0 auto;
+}
+
+.footerSection .contactDetails {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+}
+
+.footerSection .contactDetails .contact {
+    width: 270px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.footerSection .contactDetails .contact h1 {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.footerSection .contactDetails .contact p {
+    color: #fff;
+    font-size: 16px;
+    padding: 3px 0;
+}
+
+.footerSection .contactDetails .contact a {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.footerSection .contactDetails .openTime {
+    width: 270px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.footerSection .contactDetails .openTime h1 {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.footerSection .contactDetails .openTime p {
+    color: #fff;
+    font-size: 16px;
+    padding: 2px 0;
+}
+
+.footerSection .contactDetails .location{
+    padding: 5px;
+}
+
+.footerSection .contactDetails .location iframe {
+    width: 270px;
+}
+
+.footerSection .contactDetails .location h1 {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.footerSection .copyRights p{
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 0;
+}
