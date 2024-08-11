@@ -29,7 +29,7 @@
 
 /* ==================Section video - end================= */
 /* ==================Section card - start================= */
-.cards{
+.cards {
     width: 74%;
     margin: 0 auto;
     display: flex;
@@ -39,7 +39,7 @@
     cursor: pointer;
 }
 
-.cards .card{
+.cards .card {
     width: 38vh;
 }
 
@@ -49,32 +49,33 @@
     margin: 15px 0;
 }
 
-.cards .card .cardPara{
-    color:#fff;
+.cards .card .cardPara {
+    color: #fff;
     font-size: 16px;
     margin: 30px 0;
 }
 
-.cards .card .rmBtn{
+.cards .card .rmBtn {
     color: #BF9515;
     font-size: 12px;
     cursor: pointer;
 }
 
-.cards .bgClr{
+.cards .bgClr {
     background-color: #BF9515;
     height: 145px;
     padding: 50px 0;
 
 }
-.card .bgClr h3{
+
+.card .bgClr h3 {
     color: #fff;
     background-color: #BF9515;
     font-size: 20px;
     text-align: center;
 }
 
-.cards .cdBtLine{
+.cards .cdBtLine {
     background-color: #fff;
     margin-top: 20px;
     height: 2px;
@@ -82,3 +83,65 @@
 }
 
 /* ==================Section card - end================= */
+/* ==================Section Reserve Table - Start================= */
+.reserveTbl {
+    width: 74%;
+    margin:15px auto;
+}
+
+.reserveTbl .reserveTitle {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.reserveTbl form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.reserveTbl form select {
+    width: 260px;
+    height: 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.reserveTbl form input {
+    width: 260px;
+    height: 30px;
+    color: #fff;
+    padding: 0 5px;
+    border: 1px solid #fff;
+    font-size: 16px;
+}
+
+.reserveTbl form .fdTable {
+    width: 150px;
+    height: 30px;
+    border: 1px solid #fff;
+    background-color: #BF9515;
+    text-align: center;
+}
+
+.reserveTbl form .fdTable a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    background-color: #BF9515;
+}
+
+.reserveTbl .reserveTableLine {
+    background-color: #fff;
+    margin-top: 20px;
+    height: 2px;
+    width: 100%;
+}
+
+/* ==================Section Reserve Table - end================= */
