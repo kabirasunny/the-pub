@@ -5,15 +5,25 @@ import viteLogo from '/vite.svg'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Footer from './components/Footer'
+import Menu from './components/Menu'
+import {createBrowserRouter,RouterProvider} from 'react-router-dom'
 
 function App() {
 
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <><Navbar /><Home /><Footer /></>
+    },
+    {
+      path: "/menu",
+      element: <><Navbar /><Menu /><Footer /></>
+    }
+  ])
 
   return (
     <>
-    <Navbar/>
-    <Home/>
-    <Footer/>
+      <RouterProvider router={router} />
     </>
   )
 }
