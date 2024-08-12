@@ -1,0 +1,129 @@
+/* ========================lunchMenu css- Start============================ */
+.lunchMenu {
+    width: 74%;
+    margin: 0 auto;
+}
+
+.lunchMenuBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.lunchMenu .lunchMenuBox .lmTitle {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.lunchMenu .lunchMenuBox .subTitle {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.lunchMenu .lunchMenuBox .lmDesc,
+.subTlPara {
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.lunchMenu .lunchMenuBox h2 {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.lunchMenuCardBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.lunchMenuCardBox .lunchMenuCards {
+    width: 260px;
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: 50px;
+}
+
+.lunchMenuCardBox .lunchMenuCards .cdTitle {
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.lunchMenuCardBox .lunchMenuCards p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.lunchMenuCardBox .lunchMenuCards .cdPrice {
+    margin: 10px 0;
+}
+
+/* ========================lunchMenu css- end============================ */
+/* ========================mains css- Start============================ */
+.mainsSection {
+    width: 74%;
+    margin: 0 auto;
+}
+
+.mainsDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mainsSection .mainsDetails .mTitle {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.mainsSection .mainsDetails .mPara {
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.mainsSection .mCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mainsSection .mCards .cards {
+    width: 260px;
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: 50px;
+}
+
+.mainsSection .mCards .cards .cdTitle {
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.mainsSection .mCards .cards p {
+    color: #fff;
+    font-size: 14px;
+}
+
+.mainsSection .mCards .cards .cdPrice {
+    margin: 10px 0;
+}
+
+/* ========================mains css- end============================ */
