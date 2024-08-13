@@ -100,6 +100,7 @@ const Menu = () => {
                         <p className="cdPrice">100</p>
                     </div>
                 </div>
+                <div className="msBtLine"><div></div></div>
             </section>
             {/* ========================mains Section- Start============================ */}
         </>
