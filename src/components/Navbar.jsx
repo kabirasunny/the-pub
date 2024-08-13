@@ -21,7 +21,7 @@ const Navbar = () => {
                 <ul className='navList'>
                     <NavLink to="/"><li>Home</li></NavLink>
                     <NavLink to="/menu"><li>Menu</li></NavLink>
-                    <a href=""><li>Order Online</li></a>
+                    <NavLink to="/order"><li>Order Online</li></NavLink>
                     <a href=""><li>Events</li></a>
                     <a href=""><li>About Us</li></a>
                     <a href=""><li>Gallary</li></a>
