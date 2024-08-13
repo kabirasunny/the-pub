@@ -6,7 +6,8 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
-import {createBrowserRouter,RouterProvider} from 'react-router-dom'
+import OrderOnline from './components/OrderOnline'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
 
@@ -18,6 +19,10 @@ function App() {
     {
       path: "/menu",
       element: <><Navbar /><Menu /><Footer /></>
+    },
+    {
+      path: "/order",
+      element: <><Navbar /><OrderOnline /><Footer /></>
     }
   ])
 
