@@ -1,26 +1,104 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './OrderOnline.css'
-import { FaRegCircle } from "react-icons/fa";
+import { FaRegCircle, FaTruckPickup } from "react-icons/fa";
 
 const OrderOnline = () => {
+    const [dis, setDis] = useState();
+
+    function openHandle() {
+        setDis({ display: 'block' })
+        setHide({ display: 'block' });
+        setDeliHide({ display: 'none' });
+    }
+
+    function closeHandle() {
+        setDis({ display: 'none' })
+        setBlu();
+    }
+
+    const [show, setShow] = useState();
+    function showOpen() {
+        setShow({ display: 'block' })
+    }
+
+    function showClose() {
+        setShow()
+    }
+
+    const [value, setValue] = useState('up to 30 Minutes')
+    function handleChange(e) {
+        setValue(e.target.value);
+    }
+
+    const [deliHide, setDeliHide] = useState()
+    const [hide, setHide] = useState();
+    function deliOpenHandle() {
+        setDeliHide({ display: 'block' });
+        setHide({ display: 'none' });
+    }
+
     return (
         <>
             {/* ======================backgroundHead Section - start=============================== */}
-            <section className="bgHead">
+            <section className="bgHead" >
                 <img src="./src/image/bgHead.webp" alt="" />
             </section>
             {/* ======================backgroundHead Section - end=============================== */}
             {/* ======================OrderOnline Section - start=============================== */}
-            <section className="odrOnlineSection">
+            <section className="odrOnlineSection" >
                 <h1 className="odrTitle">Order Online</h1>
                 <p className="odrPara">You can order online! Browse our menu items and choose what you’d like to order from us.</p>
-                <p className="odrAccept"><FaRegCircle /> Accepting Orders</p>
+                <p className="odrAccept"><FaRegCircle style={{ display: 'none' }} /><i className="fa-solid fa-circle"></i> Accepting Orders</p>
                 <div className="odrBtn">
-                    <button className='btn'>Pickup</button>
-                    <button className='btn'>Delivery</button>
+                    <button className='btn' onClick={openHandle}>Pickup</button>
+                    <button className='btn' onClick={deliOpenHandle}>Delivery</button>
                 </div>
+
+                {/* ----------------------------------------------------------------------------------------- */}
+                <div className="pickupDelivery" style={dis}>
+                    <i className="fa-solid fa-xmark" onClick={closeHandle}></i>
+                    <h1>How would you like to receive your order ?</h1>
+                    <div className="pdBtn">
+                        <button className='btn' onClick={openHandle}>Pickup</button>
+                        <button className='btn' onClick={deliOpenHandle}>Delivery</button>
+                    </div>
+                    <div className="pdDiv" style={hide}>
+                        <small >Pickup from:</small>
+                        <p >an Francisco, CA, USA</p>
+                        <small >When:</small>
+                    </div>
+                    <form action="">
+                        <div className="delivery" style={deliHide}>
+                            <label className='dLabel' htmlFor="delivery">delivery to:</label><br />
+                            <input className='dInput' type="text" name="" id="" /><br />
+                        </div>
+                        <div className="radioDiv" style={hide}>
+                            <input type="radio" name="btn" onChange={handleChange} id="minutes" value="up to 30 Minutes" onClick={showClose} />
+                            <label htmlFor='minutes'>up to 30 Minutes</label><br />
+                            <input type="radio" name="btn" id="later" value="Schedule for later" onClick={showOpen} />
+                            <label htmlFor="later">Schedule for later</label>
+                        </div>
+                        <div className="dtBtn" style={show}>
+                            <label className='dtlabel' htmlFor="">Date: </label>
+                            <div>Today</div>
+                            <label className='dtlabel' htmlFor="time">Time: </label>
+                            <select value={value} name="" id="time" onChange={handleChange}>
+                                <option value="Today 9:30 PM">Today 9:30 PM</option>
+                                <option value="Today 9:45 PM">Today 9:45 PM</option>
+                                <option value="Today 10:00 PM">Today 10:00 PM</option>
+                                <option value="Today 10:15 PM">Today 10:15 PM</option>
+                                <option value="Today 10:30 PM">Today 10:30 PM</option>
+                                <option value="Today 10:45 PM">Today 10:45 PM</option>
+                            </select>
+                        </div><br />
+                        <button type='submit'>Save</button>
+                    </form>
+                </div>
+
+                {/* ----------------------------------------------------------------------------------------- */}
+
                 <div className="odrPickup">
-                    <p className="pickup">Pickup time: <span>up to 30 Minutes</span><button>change</button></p>
+                    <p className="pickup">Pickup time: <span>{value}</span><button onClick={openHandle}>change</button></p>
                     <p className="address">Pickup address: USA ,CA</p>
                 </div>
                 <div className="odrLine"><div></div></div>
