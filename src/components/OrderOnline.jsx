@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './OrderOnline.css'
 import { FaRegCircle, FaTruckPickup } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
 
 const OrderOnline = () => {
     const [dis, setDis] = useState();
@@ -37,6 +38,36 @@ const OrderOnline = () => {
         setHide({ display: 'none' });
     }
 
+    const [acdHide, setAcdHide] = useState();
+    const [src, setSrc] = useState();
+    const [cdTitle, setCdTitle] = useState();
+    const [cdPara, setCdPara] = useState();
+    const [cdPrice, setCdPrice] = useState();
+
+    function addCardHandle(e) {
+        setAcdHide({ display: 'block' });
+        const number = document.getElementsByClassName("number")[6].textContent;
+        // const number = document.getElementById("number0").textContent;
+        const cdNumber = parseInt(number);
+        console.log(cdNumber);
+
+        const cdImage = document.getElementsByClassName("cardImg")[cdNumber];
+        const cdSrc = cdImage.getAttribute("src");
+        const cdTitle = document.getElementsByClassName("cardTitle")[cdNumber].textContent;
+        const cdPara = document.getElementsByClassName("cardPara")[cdNumber].textContent;
+        const price = document.getElementsByClassName("cardPrice")[cdNumber].textContent;
+        const cdPrice = parseInt(price);
+
+        setSrc(cdSrc);
+        setCdTitle(cdTitle);
+        setCdPara(cdPara);
+        setCdPrice(cdPrice);
+    }
+
+    function closeAddCardHandle() {
+        setAcdHide({ display: 'none' });
+    }
+
     return (
         <>
             {/* ======================backgroundHead Section - start=============================== */}
@@ -44,6 +75,10 @@ const OrderOnline = () => {
                 <img src="./src/image/bgHead.webp" alt="" />
             </section>
             {/* ======================backgroundHead Section - end=============================== */}
+
+
+
+
             {/* ======================OrderOnline Section - start=============================== */}
             <section className="odrOnlineSection" >
                 <h1 className="odrTitle">Order Online</h1>
@@ -51,7 +86,7 @@ const OrderOnline = () => {
                 <p className="odrAccept"><FaRegCircle style={{ display: 'none' }} /><i className="fa-solid fa-circle"></i> Accepting Orders</p>
                 <div className="odrBtn">
                     <button className='btn' onClick={openHandle}>Pickup</button>
-                    <button className='btn' onClick={deliOpenHandle}>Delivery</button>
+                    <button className='btn' onClick={openHandle}>Delivery</button>
                 </div>
 
                 {/* ----------------------------------------------------------------------------------------- */}
@@ -104,6 +139,9 @@ const OrderOnline = () => {
                 <div className="odrLine"><div></div></div>
             </section>
             {/* ======================OrderOnline Section - end=============================== */}
+
+
+
             {/* ======================OrderMenu Section - start=============================== */}
             <section className="odrMenuSection">
                 <div className="odrMenu">
@@ -118,43 +156,49 @@ const OrderOnline = () => {
                     <p className="odrMPara">I’m a description. Click me and “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                 </div>
                 <div className="odrMenuCards">
-                    <div className="card">
-                        <img src="./src/image/beetrootSaladOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number0" >0</p>
+                        <img src="./src/image/beetrootSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Beetroot Salad</h1>
-                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
+                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menusunny</p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/mixSaladOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number1">1</p>
+                        <img src="./src/image/mixSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Mixed Salad</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/shrimpSaladOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number2">2</p>
+                        <img src="./src/image/shrimpSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Shrimp Salad</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/nuchosOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number3">3</p>
+                        <img src="./src/image/nuchosOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Nuchos</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/potatoWedgesOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number4">4</p>
+                        <img src="./src/image/potatoWedgesOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Potato Wedges</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/potatoBoatsOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number5">5</p>
+                        <img src="./src/image/potatoBoatsOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Potato Boat</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
@@ -165,52 +209,68 @@ const OrderOnline = () => {
                 <h1 className="odrMTitle" id='cdMains' >Mains</h1>
                 <p className="odrMPara">I’m a description. Click me and “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                 <div className="mainsCards">
-                    <div className="card">
-                        <img src="./src/image/pizzaMargitaOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number6">6</p>
+                        <img src="./src/image/pizzaMargitaOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Pizza Margita</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/chickenSandwichOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number7">7</p>
+                        <img src="./src/image/chickenSandwichOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Chicken Sandwich</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/beefBurgerOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number8">8</p>
+                        <img src="./src/image/beefBurgerOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Beef Burger</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/vegetarianBurgerOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number9">9</p>
+                        <img src="./src/image/vegetarianBurgerOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Vegetarian Burger</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/steakOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number10">10</p>
+                        <img src="./src/image/steakOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Steak</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
                         <p className="cardPrice">100</p>
                     </div>
 
-                    <div className="card">
-                        <img src="./src/image/fishChipsOnline.webp" alt="" />
+                    <div className="card" onClick={addCardHandle}>
+                        <p className="number" id="number11">11</p>
+                        <img src="./src/image/fishChipsOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Fish & Chips</h1>
-                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
+                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu gkkjgkugkg</p>
                         <p className="cardPrice">100</p>
                     </div>
                 </div>
+
+                {/* -------------addCard---------------------------------  */}
+                <div className="addCard" style={acdHide}>
+                    <p className="acdIcon" onClick={closeAddCardHandle}><RxCross1 /></p>
+                    <img src={src} alt="" />
+                    <h1 className="aCardTitle">{cdTitle}</h1>
+                    <p className="aCardPara">{cdPara}</p>
+                    <button className='aCardBtn'>Add Now | {cdPrice}</button>
+                </div>
+                {/* -------------addCard--------------------------------- */}
+
+
                 <div className="odrLine"><div></div></div>
             </section>
-
-
             {/* ======================OrderMenu Section - end=============================== */}
         </>
     )
