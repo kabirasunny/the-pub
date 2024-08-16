@@ -90,7 +90,7 @@ html {
     margin: 10px 0;
 }
 
-.pickupDelivery form .delivery{
+.pickupDelivery form .delivery {
     display: none;
 }
 
@@ -122,7 +122,7 @@ html {
     /* margin-right: 10px; */
 }
 
-.pickupDelivery .pdDiv{
+.pickupDelivery .pdDiv {
     display: block;
 }
 
@@ -136,7 +136,7 @@ html {
     font-size: 16px;
 }
 
-.pickupDelivery form .radioDiv{
+.pickupDelivery form .radioDiv {
     display: block;
 }
 
@@ -275,6 +275,11 @@ html {
     width: 272px;
     margin: 30px 0;
     border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.odrMenuSection .odrMenuCards .card:hover{
+     border-color: #979700;
 }
 
 .odrMenuSection .odrMenuCards .card h1 {
@@ -301,6 +306,15 @@ html {
     width: 272px;
     margin: 30px 0;
     border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.odrMenuSection .number{
+    display: none;
+}
+
+.odrMenuSection .card:hover{
+    border-color:#979700;
 }
 
 .odrMenuSection .card h1 {
@@ -315,5 +329,55 @@ html {
     text-wrap: balance;
     padding-left: 5px;
 }
+
+/* -------------addCard--------------------------------- */
+.odrMenuSection .addCard {
+    display: none;
+    position: fixed;
+    left: 26.7rem;
+    top: 60px;
+    width: 36.5vw;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.odrMenuSection .addCard .acdIcon{
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #fff;
+    position: fixed;
+    height: 25px;
+    right: 28rem;
+    top: 4rem;
+    cursor: pointer;
+}
+
+.odrMenuSection .addCard img {
+    width: 500px;
+}
+
+.odrMenuSection .addCard .aCardTitle {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.odrMenuSection .addCard .aCardPara {
+    color: #fff;
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.odrMenuSection .addCard .aCardBtn {
+    background: #979700;
+    color: #fff;
+    padding: 5px 20px;
+    width: 50%;
+    border: 1px solid #fff;
+    margin: 20px 125px;
+    cursor: pointer;
+}
+
+/* -------------addCard--------------------------------- */
 
 /* ======================OdrMenu css end======================== */
