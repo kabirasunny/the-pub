@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
 import OrderOnline from './components/OrderOnline'
+import Event from './components/Event'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
@@ -23,6 +24,10 @@ function App() {
     {
       path: "/order",
       element: <><Navbar /><OrderOnline /><Footer /></>
+    },
+    {
+      path: "/event",
+      element: <><Navbar /><Event /><Footer /></>
     }
   ])
 
