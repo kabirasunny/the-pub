@@ -1,0 +1,24 @@
+.aboutEvent {
+    width: 74%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 80px 10px;
+}
+
+.aboutEvent .aeDiv {
+    width: 60%;
+}
+
+.aboutEvent .aeDiv .aeTitle {
+    color: #fff;
+    font-size: 40px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.aboutEvent .aeDiv .aePara {
+    color: #fff;
+    font-size: 18px;
+    text-wrap: balance;
+    cursor: pointer;
+}
