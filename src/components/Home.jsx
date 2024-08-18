@@ -79,7 +79,7 @@ const Home = () => {
                         </select>
                     </div>
                     <div className="fdTable">
-                        <a href="">Find a Table</a>
+                        <NavLink to="/rstable">Find a Table</NavLink>
                     </div>
                 </form>
                 <div className="reserveTableLine"><div></div></div>

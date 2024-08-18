@@ -9,6 +9,7 @@ import Menu from './components/Menu'
 import OrderOnline from './components/OrderOnline'
 import Event from './components/Event'
 import About from './components/About'
+import Table from './components/Table'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
     {
       path: "/about",
       element: <><Navbar /><About /><Footer /></>
+    },
+    {
+      path: "/rstable",
+      element: <><Navbar /><Table /><Footer /></>
     }
   ])
 
