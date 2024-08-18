@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.css'
+import { NavLink } from 'react-router-dom'
 const Home = () => {
     return (
         <>
@@ -20,21 +21,21 @@ const Home = () => {
                     <img src="./src/image/card-1.webp" alt="" />
                     <p className='cardPara'>
                         I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-                    <p className="rmBtn">Read More</p>
+                    <NavLink to='/event' className="rmBtn">Read More</NavLink>
                 </div>
                 <div className="card">
                     <h2 className="cardTitle">Enjoy Our Snacks</h2>
                     <img src="./src/image/card-2.webp" alt="" />
                     <p className='cardPara'>
                         I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-                    <p className="rmBtn">Read More</p>
+                    <NavLink to='/menu' className="rmBtn">Read More</NavLink>
                 </div>
                 <div className="card">
                     <h2 className="cardTitle">Celebrate With Us</h2>
                     <img src="./src/image/card-3.webp" alt="" />
                     <p className='cardPara'>
                         I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
-                    <p className="rmBtn">Read More</p>
+                    <NavLink to='/about' className="rmBtn">Read More</NavLink>
                 </div>
                 <div className="card">
                     <h2 className="cardTitle">Happy Hour</h2>
