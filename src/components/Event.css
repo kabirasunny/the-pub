@@ -22,3 +22,74 @@
     text-wrap: balance;
     cursor: pointer;
 }
+
+
+/* ========================event card start=========================== */
+
+.eventCards {
+    width: 74%;
+    margin: 0 auto;
+}
+
+.eventCards .eCard .eCdDetails {
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+
+.eventCards .eCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.eventCards .eCard .eCdDetails .eTitle {
+    color: #fff;
+    font: 30px;
+    cursor: pointer;
+}
+
+.eventCards .eCard .eCdDetails .ePara {
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 15px 0;
+}
+
+.eventCards .eCard .eCdDetails .eTimeDay {
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.eventCards .eCard .wkd {
+    background: #BF9515;
+    width: 432px;
+    height: 200px;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.eventCards .eCard .wkd .wkdTitle {
+    color: #fff;
+    font-size: 30px;
+    background-color: #BF9515;
+}
+
+.eventCards .eCard .wkd .wkdTime {
+    color: #fff;
+    font: 18px;
+    background-color: #BF9515;
+}
+
+.eventCards .btLine div {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin: 20px 0;
+}
+
+
+
+/* ========================event card start=========================== */
