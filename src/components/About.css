@@ -88,6 +88,11 @@
     cursor: pointer;
 }
 
+.about .aboutContainer form button:hover{
+    background-color: #979700;
+    transition: background 1s ease;
+}
+
 .about .btLine {
     background: #fff;
     height: 1px;
