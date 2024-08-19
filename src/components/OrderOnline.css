@@ -55,9 +55,14 @@ html {
     color: #fff;
     padding: 5px 40px;
     border-radius: 0.1rem;
-    border-color: #fff;
+    border: 1px solid #fff;
     cursor: pointer;
     margin-right: 10px;
+}
+
+.odrOnlineSection .odrBtn .btn:hover {
+    background-color: #979700;
+    transition: background 1s ease;
 }
 
 /* ------------------------------------------------------------ */
@@ -236,6 +241,10 @@ html {
     margin-right: 10px;
 }
 
+.odrMenuSection .odrMenu .selectMenu a:hover {
+    color: #979700;
+}
+
 .odrMenuSection .odrMenu {
     color: #fff;
     font-size: 30px;
@@ -276,23 +285,35 @@ html {
     margin: 30px 0;
     border: 1px solid #fff;
     cursor: pointer;
+    text-align: center;
+
 }
 
-.odrMenuSection .odrMenuCards .card:hover{
-     border-color: #979700;
+.odrMenuSection .odrMenuCards .card:hover {
+    border-color: #979700;
 }
 
 .odrMenuSection .odrMenuCards .card h1 {
     font-size: 20px;
     color: #fff;
     padding-left: 5px;
+    text-transform: uppercase;
 }
 
 .odrMenuSection .odrMenuCards .card p {
     font-size: 14px;
     color: #fff;
     text-wrap: balance;
-    padding-left: 5px;
+}
+
+.odrMenuSection .odrMenuCards .card .cardPrice,
+i {
+    font-size: 20px;
+    text-wrap: balance;
+    color: #fff;
+    font-weight: 400;
+
+
 }
 
 .odrMenuSection .mainsCards {
@@ -302,25 +323,34 @@ html {
     justify-content: space-between;
 }
 
+.odrMenuSection .mainsCards .card .cardPrice,
+i {
+    font-size: 20px;
+    text-wrap: balance;
+    color: #fff;
+}
+
 .odrMenuSection .card {
     width: 272px;
     margin: 30px 0;
     border: 1px solid #fff;
     cursor: pointer;
+    text-align: center;
 }
 
-.odrMenuSection .number{
+.odrMenuSection .number {
     display: none;
 }
 
-.odrMenuSection .card:hover{
-    border-color:#979700;
+.odrMenuSection .card:hover {
+    border-color: #979700;
 }
 
 .odrMenuSection .card h1 {
     font-size: 20px;
     color: #fff;
     padding-left: 5px;
+    text-transform: uppercase;
 }
 
 .odrMenuSection .card p {
@@ -341,7 +371,7 @@ html {
     overflow-y: scroll;
 }
 
-.odrMenuSection .addCard .acdIcon{
+.odrMenuSection .addCard .acdIcon {
     color: #fff;
     font-size: 20px;
     border: 1px solid #fff;

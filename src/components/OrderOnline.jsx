@@ -46,7 +46,7 @@ const OrderOnline = () => {
 
     function addCardHandle(e) {
         setAcdHide({ display: 'block' });
-        const number = document.getElementsByClassName("number")[6].textContent;
+        const number = document.getElementsByClassName("number")[9].textContent;
         // const number = document.getElementById("number0").textContent;
         const cdNumber = parseInt(number);
         console.log(cdNumber);
@@ -160,8 +160,8 @@ const OrderOnline = () => {
                         <p className="number" id="number0" >0</p>
                         <img src="./src/image/beetrootSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Beetroot Salad</h1>
-                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menusunny</p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -169,7 +169,7 @@ const OrderOnline = () => {
                         <img src="./src/image/mixSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Mixed Salad</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 120</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -177,7 +177,7 @@ const OrderOnline = () => {
                         <img src="./src/image/shrimpSaladOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Shrimp Salad</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 150</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -185,7 +185,7 @@ const OrderOnline = () => {
                         <img src="./src/image/nuchosOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Nuchos</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 110</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -193,7 +193,7 @@ const OrderOnline = () => {
                         <img src="./src/image/potatoWedgesOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Potato Wedges</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -201,7 +201,7 @@ const OrderOnline = () => {
                         <img src="./src/image/potatoBoatsOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Potato Boat</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 100</p>
                     </div>
                 </div>
 
@@ -214,7 +214,7 @@ const OrderOnline = () => {
                         <img src="./src/image/pizzaMargitaOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Pizza Margita</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 300</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -222,15 +222,15 @@ const OrderOnline = () => {
                         <img src="./src/image/chickenSandwichOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Chicken Sandwich</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 200</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
                         <p className="number" id="number8">8</p>
                         <img src="./src/image/beefBurgerOnline.webp" alt="" className="cardImg" />
-                        <h1 className="cardTitle">Beef Burger</h1>
+                        <h1 className="cardTitle">Chicken Burger</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 189</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -238,7 +238,7 @@ const OrderOnline = () => {
                         <img src="./src/image/vegetarianBurgerOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Vegetarian Burger</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
@@ -246,15 +246,15 @@ const OrderOnline = () => {
                         <img src="./src/image/steakOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Steak</h1>
                         <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu </p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
                     </div>
 
                     <div className="card" onClick={addCardHandle}>
                         <p className="number" id="number11">11</p>
                         <img src="./src/image/fishChipsOnline.webp" alt="" className="cardImg" />
                         <h1 className="cardTitle">Fish & Chips</h1>
-                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu gkkjgkugkg</p>
-                        <p className="cardPrice">100</p>
+                        <p className="cardPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu</p>
+                        <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 160</p>
                     </div>
                 </div>
 
