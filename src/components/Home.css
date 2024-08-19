@@ -62,10 +62,14 @@
     cursor: pointer;
 }
 
+.cards .card .rmBtn:hover{
+    color: #fff;
+}
+
 .cards .bgClr {
     background-color: #BF9515;
     height: 145px;
-    padding: 50px 0;
+    padding: 40px 0;
 
 }
 
@@ -124,18 +128,21 @@
 
 .reserveTbl form .fdTable {
     width: 150px;
-    height: 30px;
+    padding: 2px 0;
     border: 1px solid #fff;
     background-color: #BF9515;
     text-align: center;
+}
+
+.reserveTbl form .fdTable:hover{
+    background-color: #000;
 }
 
 .reserveTbl form .fdTable a {
     font-size: 16px;
     color: #fff;
     text-decoration: none;
-    font-weight: 400;
-    background-color: #BF9515;
+    background-color: transparent;
 }
 
 .reserveTbl .reserveTableLine {
