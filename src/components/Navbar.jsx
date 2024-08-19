@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
-import { FaCartPlus,FaUserPlus  } from "react-icons/fa";
+import { FaCartPlus, FaUserPlus } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+
+    const [position, setPosition] = useState();
+    const [hideicon, setHideIcon] = useState();
+    function openCart() {
+        setPosition({width:'250px'})
+        setHideIcon({display:'flex'})
+    }
+
+    function closeCart() {
+        setPosition({ width: '0' })
+        setHideIcon({display:'none'})
+    }
+
+
     return (
         <>
             {/* ====================Section logo - Start================================= */}
@@ -27,8 +42,9 @@ const Navbar = () => {
                     {/* <a href=""><li>Gallary</li></a> */}
                 </ul>
                 <div className="loginCart">
-                    <a href="" className='icart'><FaUserPlus /></a>
-                    <a href="" className='icart'><FaCartPlus /></a>
+                    <p href="" className='icart'><FaUserPlus /></p>
+                    <p href="" className='icart'><FaCartPlus onClick={openCart} /></p>
+                    <div className="cart" style={position}><div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div></div>
                 </div>
             </section>
             {/* ====================Section Navbar - End================================= */}

@@ -1,5 +1,5 @@
 /* ====================Section logo - Start================================= */
-.headLogo{
+.headLogo {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -8,55 +8,60 @@
     margin: 2rem 0
 }
 
-.headLogo .line{
+.headLogo .line {
     background: #fff;
     width: 18rem;
     height: 1px;
 }
 
-.headLogo .secondLine{
+.headLogo .secondLine {
     background: #fff;
     width: 16rem;
     height: 1px;
     margin: 5px 0;
 }
 
-.headLogo .logo span{
+.headLogo .logo span {
     color: white;
     text-transform: uppercase;
     font-size: 54px;
     cursor: pointer;
 }
 
-.headLogo .logoPara p{
+.headLogo .logoPara p {
     color: #fff;
     font-size: 18px;
     padding: 5px;
     cursor: pointer;
 }
 
- /* ====================Section logo - End=================================  */
- /* ====================Section Navbar - Start================================= */
+/* ====================Section logo - End=================================  */
+/* ====================Section Navbar - Start================================= */
 
-.navbar{
+.navbar {
     width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: center;
 }
 
-.navbar .navList{
+.navbar .navList {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: nowrap;
 }
 
-.navbar .navList a li{
+.navbar .navList a li {
     list-style: none;
 }
 
-.navbar .navList a{
+.navbar .navList a li:hover {
+    color: #BF9515;
+
+}
+
+.navbar .navList a {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
@@ -64,18 +69,39 @@
     padding: 0 20px;
 }
 
-.navbar .loginCart{
-    
+.navbar .loginCart {
+    display: flex;
     padding-left: 15px;
 }
 
 
-.navbar .loginCart .icart{
+.navbar .loginCart .icart {
     color: #BF9515;
     cursor: pointer;
-    padding:0 8px;
+    padding: 0 8px;
     font-size: 20px;
-    
+
+}
+
+.navbar .loginCart .cart {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    z-index: 10;
+    transition: width 1s ease;
+}
+
+.navbar .loginCart .cart .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
 }
 
 
