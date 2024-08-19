@@ -8,7 +8,7 @@ const Table = () => {
             <section className="reserveTbl">
                 <h1 className='reserveTitle'>Make a reservation</h1>
                 <p className="reservePara">To help us find the best table for you, select the preferred party size, date, and time of your reservation.</p>
-                <form action="">
+                <form action="" className='form'>
                     <div className="fmGDT">
                         <div className="partySize">
                             <select name="" id="">

@@ -17,21 +17,21 @@
     text-align: center;
 }
 
-.reserveTbl form {
+.reserveTbl .form {
     display: flex;
     margin-top: 100px;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.reserveTbl form .fmGDT {
+.reserveTbl .form .fmGDT {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
 }
 
-.reserveTbl form .fmGDT select {
+.reserveTbl .form .fmGDT select {
     width: 290px;
     height: 30px;
     border: 1px solid #fff;
@@ -41,7 +41,7 @@
     padding: 0 5px;
 }
 
-.reserveTbl form .fmGDT input {
+.reserveTbl .form .fmGDT input {
     width: 290px;
     height: 30px;
     color: #fff;
@@ -57,7 +57,7 @@
     width: 100%;
 }
 
-.reserveTbl form .fmTimes {
+.reserveTbl .form .fmTimes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -65,7 +65,7 @@
     gap: 20px;
 }
 
-.reserveTbl form .fmTimes .fmTm {
+.reserveTbl .form .fmTimes .fmTm {
     color: #fff;
     border: 1px solid #fff;
     width: 160px;
@@ -74,11 +74,11 @@
     cursor: pointer;
 }
 
-.reserveTbl form .fmTimes .fmTm:hover {
+.reserveTbl .form .fmTimes .fmTm:hover {
     border: 1px solid #BF9515;
 }
 
-.reserveTbl form button {
+.reserveTbl .form button {
     color: #fff;
     font-size: 18px;
     border: 1px solid #fff;
@@ -89,7 +89,7 @@
     cursor: pointer;
 }
 
-.reserveTbl form button:hover{
+.reserveTbl .form button:hover{
     background-color: #BF9515;
     transition: background-color 1s ease;
 }
