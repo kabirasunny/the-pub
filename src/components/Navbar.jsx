@@ -11,7 +11,7 @@ const Navbar = () => {
     const [position, setPosition] = useState();
     const [hideicon, setHideIcon] = useState();
     function openCart() {
-        setPosition({ width: '250px' })
+        setPosition({ width: '350px' })
         setHideIcon({ display: 'flex' })
     }
 
@@ -43,22 +43,22 @@ const Navbar = () => {
 
     const handleChanges = (e) => {
 
-        setData({...data, [e.target.name]:e.target.value})
+        setData({ ...data, [e.target.name]: e.target.value })
     }
 
-    const submit=(e)=>{
+    const submit = (e) => {
         e.preventDefault();
         console.log(data);
 
 
-        signUp(data).then((resp)=>{
+        signUp(data).then((resp) => {
             console.log(resp);
             console.log("success log");
-        }).catch((error)=>{
+        }).catch((error) => {
             console.log(error);
             console.log("error log");
         })
-        
+
     }
 
 
@@ -88,7 +88,25 @@ const Navbar = () => {
                 <div className="loginCart">
                     <p className='icart'><FaUserPlus onClick={openForm} /></p>
                     <p className='icart'><FaCartPlus onClick={openCart} /></p>
-                    <div className="cart" style={position}><div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div></div>
+                    <div className="cart" style={position}>
+                        <div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div>
+                        <div className="cartInfo">
+                            <div className="fdList">
+                                <img src=".\src\image\chickenSandwich.webp" alt="" />
+                                <h2 className="imgTitle">hello</h2>
+                                <p className="price"><i className="fa-solid fa-rupee-sign"></i></p>
+                                <p className="btn"><span>-</span>1<span>+</span></p>
+                            </div>
+                            <div className="line"><div></div></div>
+                            <div className="totalAm">
+                                <p>Sub Total : <span>10</span></p>
+                            </div>
+                            <div className="promoBtn">
+                                <a href="">Promo code</a>
+                                <button className='pbBtn'>Pay now</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             {/* ====================Section Navbar - End================================= */}
