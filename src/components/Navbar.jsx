@@ -4,7 +4,8 @@ import { FaCartPlus, FaUserPlus } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
-import { signUp } from '../services/user-service';
+import { signUp, getUser } from '../services/user-service';
+import OrderOnline from './OrderOnline';
 
 const Navbar = () => {
 
@@ -61,7 +62,24 @@ const Navbar = () => {
 
     }
 
+    const [loginData, setLoginData] = useState('');
+    const [userName, setUserName] = useState('');
+    const handleChange = (e) => {
+        setLoginData(e.target.value);
+    }
+    const login = (e) => {
+        e.preventDefault();
+        const logData = loginData.trim();
 
+        getUser(logData, data).then((data) => {
+            console.log(data);
+            setUserName(data.fullName);
+            console.log("success login");
+        }).catch((error) => {
+            console.log(error);
+            console.log("error login");
+        })
+    }
 
     return (
         <>
@@ -85,11 +103,15 @@ const Navbar = () => {
                     <NavLink to="/about"><li>About Us</li></NavLink>
                     {/* <a href=""><li>Gallary</li></a> */}
                 </ul>
+
+                {/* -------------------cartlogin - start---------------------------------------------------------- */}
                 <div className="loginCart">
-                    <p className='icart'><FaUserPlus onClick={openForm} /></p>
+                    <p className='icart'><FaUserPlus onClick={openForm} /> {userName}</p>
                     <p className='icart'><FaCartPlus onClick={openCart} /></p>
                     <div className="cart" style={position}>
                         <div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div>
+
+
                         <div className="cartInfo">
                             <div className="fdList">
                                 <img src=".\src\image\chickenSandwich.webp" alt="" />
@@ -106,8 +128,11 @@ const Navbar = () => {
                                 <button className='pbBtn'>Pay now</button>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
+                {/* -------------------cartlogin - end---------------------------------------------------------- */}
             </section>
             {/* ====================Section Navbar - End================================= */}
             {/* ====================Section form - Start================================= */}
@@ -133,8 +158,8 @@ const Navbar = () => {
                     <h1 className='title2'>Login</h1>
                     <h1 className='icon2' onClick={closeForm}><RxCross1 /></h1>
                 </div>
-                <form action="">
-                    <input className='inp' type="tel" name="number" id="" required placeholder='Number*' />
+                <form onSubmit={login}>
+                    <input className='inp' type="tel" name="number" id="" required placeholder='Number*' onChange={(e) => handleChange(e)} />
                     <button type='submit' className='btn2'>Send One Time Password</button>
                 </form>
             </section>
