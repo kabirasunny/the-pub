@@ -2,8 +2,41 @@ import React, { useState } from 'react'
 import './OrderOnline.css'
 import { FaRegCircle, FaTruckPickup } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
+import { FaCartPlus } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 
 const OrderOnline = () => {
+
+    const [position, setPosition] = useState();
+    const [hideicon, setHideIcon] = useState();
+    function openCart() {
+        setPosition({ width: '350px' })
+        setHideIcon({ display: 'flex' })
+    }
+
+    function closeCart() {
+        setPosition({ width: '0' })
+        setHideIcon({ display: 'none' })
+    }
+
+    const [quantity, setQuantity] = useState(1);
+    const [amount, setAmount] = useState();
+
+    function handleDec() {
+        let num = quantity - 1;
+        setQuantity(num);
+        let am = amount - 100;
+        setAmount(am)
+
+    }
+
+    function handleInc() {
+        let num = quantity + 1;
+        setQuantity(num);
+        let am = 100 * num;
+        setAmount(am);
+    }
+
     const [dis, setDis] = useState();
 
     function openHandle() {
@@ -46,7 +79,7 @@ const OrderOnline = () => {
 
     function addCardHandle(e) {
         setAcdHide({ display: 'block' });
-        const number = document.getElementsByClassName("number")[9].textContent;
+        const number = document.getElementsByClassName("number")[5].textContent;
         // const number = document.getElementById("number0").textContent;
         const cdNumber = parseInt(number);
         console.log(cdNumber);
@@ -81,7 +114,34 @@ const OrderOnline = () => {
 
             {/* ======================OrderOnline Section - start=============================== */}
             <section className="odrOnlineSection" >
-                <h1 className="odrTitle">Order Online</h1>
+                {/* <h1 className="odrTitle">Order Online</h1> */}
+                <div className='titleCart'>
+                    <h1 className='odrTitle'>Order Online</h1>
+                    <p className='icart odrTitle'><FaCartPlus onClick={openCart} /></p>
+                </div>
+
+
+                <div className="cart" style={position}>
+                    <div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div>
+                    <div className="cartInfo">
+                        <div className="fdList">
+                            <img src={src} alt="" />
+                            <h2 className="imgTitle">{cdTitle}</h2>
+                            <p className="price"><i className="fa-solid fa-rupee-sign"></i> {cdPrice}</p>
+                            <p className="btn"><span onClick={handleDec}>-</span>{quantity}<span onClick={handleInc}>+</span></p>
+                        </div>
+                        <div className="line"><div></div></div>
+                        <div className="totalAm">
+                            <p>Sub Total : <span>{amount}</span></p>
+                        </div>
+                        <div className="promoBtn">
+                            <a href="">Promo code</a>
+                            <button className='pbBtn'>Pay now</button>
+                        </div>
+                    </div>
+                </div>
+
+
                 <p className="odrPara">You can order online! Browse our menu items and choose what you’d like to order from us.</p>
                 <p className="odrAccept"><FaRegCircle style={{ display: 'none' }} /><i className="fa-solid fa-circle"></i> Accepting Orders</p>
                 <div className="odrBtn">

@@ -17,10 +17,108 @@ html {
     margin: 0 auto;
 }
 
+.odrOnlineSection .titleCart {
+    display: flex;
+    justify-content: space-between;
+}
+
 .odrOnlineSection .odrTitle {
     color: #fff;
     font-size: 50px;
     cursor: pointer;
+}
+
+.odrOnlineSection .odrTitle:hover{
+    color: #BF9515;
+}
+
+.odrOnlineSection .cart {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transition: width 1s ease;
+}
+
+.odrOnlineSection .cart .icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList img {
+    width: 10%;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList .imgTitle {
+    color: #fff;
+    font-size: 15px;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList .price i{
+    font-size: 12px;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList .btn {
+    width: 22%;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+
+.odrOnlineSection .cart .cartInfo .fdList .btn span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.odrOnlineSection .cart .cartInfo .line {
+    background: #fff;
+    width: 88%;
+    height: 1px;
+    margin: 20px auto;
+}
+
+.odrOnlineSection .cart .cartInfo .totalAm p {
+    color: #fff;
+    /* text-align: center; */
+    margin-left: 20px;
+}
+
+.odrOnlineSection .cart .cartInfo .promoBtn {
+    width: 88%;
+    margin: 100% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.odrOnlineSection .cart .cartInfo .promoBtn a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.odrOnlineSection .cart .cartInfo .promoBtn .pbBtn {
+    color: #fff;
+    border: 1px solid #ffff;
+    padding: 3px 10px;
+}
+
+.odrOnlineSection .cart .cartInfo .promoBtn .pbBtn:hover{
+    background-color: #BF9515;
+    transition: background 1s ease;
 }
 
 .odrOnlineSection .odrPara {
