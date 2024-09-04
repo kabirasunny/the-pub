@@ -9,18 +9,6 @@ import OrderOnline from './OrderOnline';
 
 const Navbar = () => {
 
-    const [position, setPosition] = useState();
-    const [hideicon, setHideIcon] = useState();
-    function openCart() {
-        setPosition({ width: '350px' })
-        setHideIcon({ display: 'flex' })
-    }
-
-    function closeCart() {
-        setPosition({ width: '0' })
-        setHideIcon({ display: 'none' })
-    }
-
     const [signForm, setSignForm] = useState();
     function openForm() {
         setSignForm({ display: 'flex' });
@@ -103,36 +91,16 @@ const Navbar = () => {
                     <NavLink to="/about"><li>About Us</li></NavLink>
                     {/* <a href=""><li>Gallary</li></a> */}
                 </ul>
+                
 
                 {/* -------------------cartlogin - start---------------------------------------------------------- */}
                 <div className="loginCart">
                     <p className='icart'><FaUserPlus onClick={openForm} /> {userName}</p>
-                    <p className='icart'><FaCartPlus onClick={openCart} /></p>
-                    <div className="cart" style={position}>
-                        <div className='icon' style={hideicon}><IoIosArrowForward onClick={closeCart} /> Cart</div>
-
-
-                        <div className="cartInfo">
-                            <div className="fdList">
-                                <img src=".\src\image\chickenSandwich.webp" alt="" />
-                                <h2 className="imgTitle">hello</h2>
-                                <p className="price"><i className="fa-solid fa-rupee-sign"></i></p>
-                                <p className="btn"><span>-</span>1<span>+</span></p>
-                            </div>
-                            <div className="line"><div></div></div>
-                            <div className="totalAm">
-                                <p>Sub Total : <span>10</span></p>
-                            </div>
-                            <div className="promoBtn">
-                                <a href="">Promo code</a>
-                                <button className='pbBtn'>Pay now</button>
-                            </div>
-                        </div>
-
-
-                    </div>
                 </div>
                 {/* -------------------cartlogin - end---------------------------------------------------------- */}
+
+
+
             </section>
             {/* ====================Section Navbar - End================================= */}
             {/* ====================Section form - Start================================= */}

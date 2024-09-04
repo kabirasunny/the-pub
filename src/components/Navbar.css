@@ -69,7 +69,7 @@
     padding: 0 20px;
 }
 
-/* -------------------login cart------------------- */
+/* -------------------login icon------------------- */
 
 .navbar .loginCart {
     display: flex;
@@ -95,91 +95,7 @@
     transition: width 1s ease;
 }
 
-.navbar .loginCart .cart .icon {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList img {
-    width: 10%;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList .imgTitle {
-    color: #fff;
-    font-size: 15px;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList .price i{
-    font-size: 12px;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList .btn {
-    width: 22%;
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-}
-
-.navbar .loginCart .cart .cartInfo .fdList .btn span {
-    margin: 0 10px;
-    cursor: pointer;
-}
-
-.navbar .loginCart .cart .cartInfo .line {
-    background: #fff;
-    width: 88%;
-    height: 1px;
-    margin: 20px auto;
-}
-
-.navbar .loginCart .cart .cartInfo .totalAm p {
-    color: #fff;
-    /* text-align: center; */
-    margin-left: 20px;
-}
-
-.navbar .loginCart .cart .cartInfo .promoBtn {
-    width: 88%;
-    margin: 100% auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.navbar .loginCart .cart .cartInfo .promoBtn a {
-    color: #ffff;
-    text-decoration: none;
-}
-
-.navbar .loginCart .cart .cartInfo .promoBtn .pbBtn {
-    color: #fff;
-    border: 1px solid #ffff;
-    padding: 3px 10px;
-}
-
-.navbar .loginCart .cart .cartInfo .promoBtn .pbBtn:hover{
-    background-color: #BF9515;
-    transition: background 1s ease;
-}
-
-
-
-
-
-
-/* -------------------login cart------------------- */
+/* -------------------login icon------------------- */
 
 /* ====================Section Navbar - End================================= */
 /* ====================Section form - Start================================= */
