@@ -104,6 +104,15 @@ const Menu = () => {
                 <div className="msBtLine"><div></div></div>
             </section>
             {/* ========================mains Section- Start============================ */}
+            {/* ========================Order cart-start====================================== */}
+            <div className="OrderCart">
+                <h1 className="odrCartTitle">Your Order</h1>
+                <div className="odrLine"><div></div></div>
+                <div className='odrName'>
+                    <p>beetroot</p> <span>1</span> <span>100</span>
+                </div>
+            </div>
+            {/* ========================Order cart-end====================================== */}
         </>
     )
 }
