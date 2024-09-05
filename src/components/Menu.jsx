@@ -18,38 +18,38 @@ const Menu = () => {
                     <div className="lunchMenuCards">
                         <img src="./src/image/beetrootSalad.webp" alt="" />
                         <h1 className="cdTitle">BEETROOT SALAD</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="lunchMenuCards">
                         <img src="./src/image/mixSalad.webp" alt="" />
                         <h1 className="cdTitle">MIXED SALAD</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 120</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="lunchMenuCards">
                         <img src="./src/image/ShrimpSalad.webp" alt="" />
                         <h1 className="cdTitle">★ SHRIMP SALAD</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 150</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="lunchMenuCards">
                         <img src="./src/image/nuchos.webp" alt="" />
                         <h1 className="cdTitle">NUCHOS</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 110</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="lunchMenuCards">
                         <img src="./src/image/potatoWedges.webp" alt="" />
                         <h1 className="cdTitle">POTATO WEDGES</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="lunchMenuCards">
                         <img src="./src/image/potatoBoats.webp" alt="" />
                         <h1 className="cdTitle">POTATO BOATS</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 100</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                 </div>
             </section>
@@ -66,39 +66,39 @@ const Menu = () => {
                     <div className="cards">
                         <img src="./src/image/pizzaMargita.webp" alt="" />
                         <h1 className="cdTitle">PIZZA MARGHRITA</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 300</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="cards">
                         <img src="./src/image/chickenSandwich.webp" alt="" />
                         <h1 className="cdTitle">CHICKEN SANDWICH</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 200</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="cards">
                         <img src="./src/image/beefBurger.webp" alt="" />
                         <h1 className="cdTitle">CHICKEN BURGER</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 189</p>
+                        <button className='bt'>Add Now</button>
                     </div>
 
                     <div className="cards">
                         <img src="./src/image/VegBurger.webp" alt="" />
                         <h1 className="cdTitle">VEGETARIAN BURGER</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="cards">
                         <img src="./src/image/stick.webp" alt="" />
                         <h1 className="cdTitle">★ STEAK</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 99</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                     <div className="cards">
                         <img src="./src/image/fishChips.webp" alt="" />
                         <h1 className="cdTitle">FISH & CHIPS</h1>
-                        <p className="cdPara">I’m a dish description. Click “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
                         <p className="cdPrice"><i className="fa-solid fa-rupee-sign"></i> 160</p>
+                        <button className='bt'>Add Now</button>
                     </div>
                 </div>
                 <div className="msBtLine"><div></div></div>

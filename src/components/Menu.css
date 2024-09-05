@@ -49,10 +49,16 @@
 }
 
 .lunchMenuCardBox .lunchMenuCards {
-    width: 260px;
+    width: 277px;
     text-align: center;
     text-wrap: balance;
     margin-bottom: 50px;
+    border: 1px solid #fff;
+    height: 100%;
+}
+
+.lunchMenuCardBox .lunchMenuCards:hover {
+    border-color: #BF9515;
 }
 
 .lunchMenuCardBox .lunchMenuCards .cdTitle {
@@ -66,10 +72,26 @@
     font-size: 14px;
 }
 
-.lunchMenuCardBox .lunchMenuCards .cdPrice,i {
+.lunchMenuCardBox .lunchMenuCards .cdPrice,
+i {
     margin: 10px 0;
     font-size: 20px;
     font-weight: 400;
+}
+
+.lunchMenuCardBox .lunchMenuCards .bt {
+    width: 100%;
+    border: 1px solid #fff;
+    padding: 5px;
+    cursor: pointer;
+    background: #fff;
+    font-weight: 600;
+}
+
+.lunchMenuCardBox .lunchMenuCards .bt:hover {
+    border-color: #BF9515;
+    background-color: #BF9515;
+    transition: background 1s ease;
 }
 
 /* ========================lunchMenu css- end============================ */
@@ -107,10 +129,18 @@
 }
 
 .mainsSection .mCards .cards {
-    width: 260px;
+    display: flex;
+    flex-direction: column;
+    width: 277px;
     text-align: center;
     text-wrap: balance;
     margin-bottom: 50px;
+    border: 1px solid #fff;
+    height: 100%;
+}
+
+.mainsSection .mCards .cards:hover {
+    border-color: #BF9515;
 }
 
 .mainsSection .mCards .cards .cdTitle {
@@ -124,11 +154,27 @@
     font-size: 14px;
 }
 
-.mainsSection .mCards .cards .cdPrice,i {
+.mainsSection .mCards .cards .cdPrice,
+i {
     margin: 10px 0;
     font-size: 20px;
     font-weight: 400;
 
+}
+
+.mainsSection .mCards .cards .bt {
+    width: 100%;
+    border: 1px solid #fff;
+    padding: 5px;
+    cursor: pointer;
+    background: #fff;
+    font-weight: 600;
+}
+
+.mainsSection .mCards .cards .bt:hover {
+    border-color: #BF9515;
+    background-color: #BF9515;
+    transition: background 1s ease;
 }
 
 .mainsSection .msBtLine {
