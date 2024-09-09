@@ -185,3 +185,75 @@ i {
 }
 
 /* ========================mains css- end============================ */
+/* ========================orderCartSection - start================== */
+.orderCartSection {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    z-index: 10;
+    border: 1px solid #fff;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.orderCartSection .odrCartTitle {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.orderCartSection .odrLine {
+    background: #fff;
+    width: 80%;
+    height: 1px;
+    margin: 5px auto;
+}
+
+.orderCartSection .odrName {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.orderCartSection .odrName p,
+span {
+    color: #fff;
+}
+
+.orderCartSection .odrAmount {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16rem;
+    margin: 10px 0;
+}
+
+.orderCartSection .odrAmount p,
+span {
+    color: #fff;
+}
+
+.orderCartSection .odrBtn {
+    width: 50%;
+    margin: 20px auto;
+
+}
+
+.orderCartSection .odrBtn .odrBt {
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+.orderCartSection .odrBtn .odrBt:hover{
+    background-color: #BF9515;
+    transition: background 1s ease;
+}
+
+/* ========================orderCartSection - start================== */
