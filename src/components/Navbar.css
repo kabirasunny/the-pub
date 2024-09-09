@@ -85,6 +85,14 @@
 
 }
 
+.navbar .loginCart .uName {
+    color: #BF9515;
+    cursor: pointer;
+    padding: 0 8px;
+    font-size: 20px;
+
+}
+
 .navbar .loginCart .cart {
     width: 0;
     height: 100%;

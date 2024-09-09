@@ -51,17 +51,23 @@ const Navbar = () => {
     }
 
     const [loginData, setLoginData] = useState('');
-    const [userName, setUserName] = useState('');
+    const [user,setUser] = useState();
+    const [fullName, setFullName] = useState();
+
     const handleChange = (e) => {
         setLoginData(e.target.value);
     }
+
     const login = (e) => {
         e.preventDefault();
         const logData = loginData.trim();
-
         getUser(logData, data).then((data) => {
-            console.log(data);
-            setUserName(data.fullName);
+            localStorage.setItem('user', JSON.stringify(data));
+            const storedUser = localStorage.getItem('user');
+            if(storedUser){
+                setUser(JSON.parse(storedUser));
+            }
+            setFullName(user.fullName);
             console.log("success login");
         }).catch((error) => {
             console.log(error);
@@ -95,7 +101,8 @@ const Navbar = () => {
 
                 {/* -------------------cartlogin - start---------------------------------------------------------- */}
                 <div className="loginCart">
-                    <p className='icart'><FaUserPlus onClick={openForm} /> {userName}</p>
+                    <p className='icart'><FaUserPlus onClick={openForm} /></p>
+                    <p className='uName'>{fullName}</p>
                 </div>
                 {/* -------------------cartlogin - end---------------------------------------------------------- */}
 
