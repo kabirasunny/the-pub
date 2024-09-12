@@ -8,3 +8,9 @@ export const getUser = (number,user) => {
     const num = parseInt(number)
     return myAxios.get(`/users/getData/${num}`,user).then((response) => response.data)
 }
+
+export  const getCards = async () =>{
+    console.log("data is loading...")
+    const data = await myAxios.get('/').then((response)=> response.data)
+    return data;
+}
