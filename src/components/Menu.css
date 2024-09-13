@@ -1,184 +1,38 @@
-/* ========================lunchMenu css- Start============================ */
-.lunchMenu {
-    width: 74%;
-    margin: 0 auto;
-}
-
-.lunchMenuBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.lunchMenu .lunchMenuBox .lmTitle {
+.menu .menuTitle h1 {
     color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-}
-
-.lunchMenu .lunchMenuBox .subTitle {
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.lunchMenu .lunchMenuBox .subTlPara{
-    color: #fff;
-}
-
-.lunchMenu .lunchMenuBox h2 {
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-top: 20px;
-}
-
-.lunchMenuCardBox {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 30px 0;
-}
-
-.lunchMenuCardBox .lunchMenuCards {
-    width: 277px;
     text-align: center;
-    text-wrap: balance;
-    margin-bottom: 50px;
-    border: 1px solid #fff;
-    height: 100%;
-}
-
-.lunchMenuCardBox .lunchMenuCards:hover {
-    border-color: #BF9515;
-}
-
-.lunchMenuCardBox .lunchMenuCards .cdTitle {
-    color: #fff;
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.lunchMenuCardBox .lunchMenuCards p {
-    color: #fff;
-    font-size: 14px;
-}
-
-.lunchMenuCardBox .lunchMenuCards .cdPrice,
-i {
-    margin: 10px 0;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.lunchMenuCardBox .lunchMenuCards .bt {
-    width: 100%;
-    border: 1px solid #fff;
-    padding: 5px;
-    cursor: pointer;
-    background: #fff;
-    font-weight: 600;
-}
-
-.lunchMenuCardBox .lunchMenuCards .bt:hover {
-    border-color: #BF9515;
-    background-color: #BF9515;
-    transition: background 1s ease;
-}
-
-/* ========================lunchMenu css- end============================ */
-/* ========================mains css- Start============================ */
-.mainsSection {
-    width: 74%;
-    margin: 0 auto;
-}
-
-.mainsDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.mainsSection .mainsDetails .mTitle {
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-.mainsSection .mainsDetails .mPara {
-    color: #fff;
-    font-size: 13px;
-    cursor: pointer;
-}
-
-.mainsSection .mCards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.mainsSection .mCards .cards {
-    display: flex;
-    flex-direction: column;
-    width: 277px;
-    text-align: center;
-    text-wrap: balance;
-    margin-bottom: 50px;
-    border: 1px solid #fff;
-    height: 100%;
-}
-
-.mainsSection .mCards .cards:hover {
-    border-color: #BF9515;
-}
-
-.mainsSection .mCards .cards .cdTitle {
-    color: #fff;
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.mainsSection .mCards .cards p {
-    color: #fff;
-    font-size: 14px;
-}
-
-.mainsSection .mCards .cards .cdPrice,
-i {
-    margin: 10px 0;
-    font-size: 20px;
-    font-weight: 400;
-
-}
-
-.mainsSection .mCards .cards .bt {
-    width: 100%;
-    border: 1px solid #fff;
-    padding: 5px;
-    cursor: pointer;
-    background: #fff;
-    font-weight: 600;
-}
-
-.mainsSection .mCards .cards .bt:hover {
-    border-color: #BF9515;
-    background-color: #BF9515;
-    transition: background 1s ease;
-}
-
-.mainsSection .msBtLine {
-    background-color: #fff;
+    font-size: 35px;
     margin: 20px 0;
-    height: 2px;
-    width: 100%;
 }
 
-/* ========================mains css- end============================ */
+.menu .menuBox {
+    width: 74%;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu .menuBox .menuBoxCard {
+    width: 25%;
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+.menu .menuBox .menuBoxCard h1 {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.menu .bottomLine {
+    width: 74%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
