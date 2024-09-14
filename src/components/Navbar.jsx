@@ -34,16 +34,15 @@ const Navbar = () => {
 
         setData({ ...data, [e.target.name]: e.target.value })
     }
-
+    const [register,setRegister] = useState('');
+    const [registerErr, setRegisterErr] = useState('');
     const submit = (e) => {
-        e.preventDefault();
-        console.log(data);
-
-
+        // e.preventDefault();
         signUp(data).then((resp) => {
-            console.log(resp);
-            console.log("success log");
+            setRegister("Registration Successful!");
+            setRegisterErr('');
         }).catch((error) => {
+            setRegisterErr("Registration Faild, Please try again");
             console.log(error);
             console.log("error log");
         })
@@ -62,18 +61,16 @@ const Navbar = () => {
         e.preventDefault();
         const logData = loginData.trim();
         getUser(logData, data).then((data) => {
-            localStorage.setItem('user', JSON.stringify(data));
-            const storedUser = localStorage.getItem('user');
-            if(storedUser){
-                setUser(JSON.parse(storedUser));
-            }
-            setFullName(user.fullName);
+            setFullName(data.fullName);
             console.log("success login");
         }).catch((error) => {
+            setRegisterErr("login faild! Please try again.");
             console.log(error);
             console.log("error login");
         })
     }
+
+    
 
     return (
         <>
@@ -118,6 +115,7 @@ const Navbar = () => {
                     <h1 className='icon'><RxCross1 onClick={closeForm} /></h1>
                 </div>
                 <form onSubmit={submit}>
+                    <h2 style={{color:'green',fontSize:'20px'}}>{register}</h2>
                     <input className='inp' type="text" name="fullName" id="" required placeholder='Full Name*' onChange={(e) => handleChanges(e)} />
                     <input className='inp' type="text" name="email" id="" required placeholder='Email*' onChange={(e) => handleChanges(e)} />
                     <input className='inp' type="tel" name="number" id="" required placeholder='Number*' onChange={(e) => handleChanges(e)} />
@@ -134,6 +132,7 @@ const Navbar = () => {
                     <h1 className='icon2' onClick={closeForm}><RxCross1 /></h1>
                 </div>
                 <form onSubmit={login}>
+                <h2 style={{color:'red',fontSize:'20px'}}>{registerErr}</h2>
                     <input className='inp' type="tel" name="number" id="" required placeholder='Number*' onChange={(e) => handleChange(e)} />
                     <button type='submit' className='btn2'>Send One Time Password</button>
                 </form>
