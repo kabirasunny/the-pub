@@ -1,18 +1,30 @@
 import { useEffect } from "react";
 import { myAxios } from "./helper";
 
-export const signUp = (user) => {
-    return myAxios.post('/users/register', user).then((response) => response.data)
+export const signUp = async (user) => {
+    try {
+        const response = await myAxios.post('/users/register', user).then((response) => response.data)
+        console.log("Registration Successful");
+        return response;
+    } catch (error) {
+        console.log("Registration failed, Please try again.");
+    }
 }
 
-export const getUser = (number, user) => {
+export const getUser = async (number, user) => {
     const num = parseInt(number)
-    return myAxios.get(`/users/getData/${num}`, user).then((response) => response.data)
+    try {
+        const response = await myAxios.get(`/users/getData/${num}`, user).then((response) => response.data)
+        console.log("successful login")
+        return response;
+    } catch (error) {
+        console.log("server error");
+    }
 }
 
 
 export const getCards = async () => {
-    const response =await myAxios.get('/').then((response) => response.data)
+    const response = await myAxios.get('/').then((response) => response.data)
     console.log(response);
     return response;
 }
