@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { FaCartPlus, FaUserPlus } from "react-icons/fa";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
@@ -18,6 +19,9 @@ const Navbar = () => {
     function closeForm() {
         setSignForm({ display: 'none' });
         setLoginForm({ display: 'none' });
+        setTimeout(() => {
+            setRegi('')
+        }, 5000)
     }
 
     const [loginForm, setLoginForm] = useState();
@@ -53,6 +57,7 @@ const Navbar = () => {
             } else {
                 setRegi("Registration Successful!");
                 setRegisterErr('');
+                closeForm();
             }
         }).catch((error) => {
             setRegisterErr("Registration Faild, Please try again");
@@ -64,21 +69,28 @@ const Navbar = () => {
 
     const [loginData, setLoginData] = useState('');
     const [fullName, setFullName] = useState();
+    const [logIcon, setLogIcon] = useState();
 
     const handleChange = (e) => {
         setLoginData(e.target.value);
     }
 
     const login = (e) => {
-        // e.preventDefault();
         const logData = loginData.trim();
         getUser(logData, data).then((data) => {
-            setFullName(data.fullName);
+            localStorage.setItem('user', JSON.stringify(data));
+            const userData = JSON.parse(localStorage.getItem('user'));
+            setFullName(userData.fullName);
+            console.log(userData)
+            setRegisterErr('');
             console.log("success login");
+            closeForm()
+            setLogIcon({ display: 'none' })
         }).catch((error) => {
-            setRegisterErr("login faild! Please try again.");
+            setRegisterErr("please enter correct number !");
             console.log(error);
             console.log("error login");
+            setLogIcon({ display: 'block' })
         })
     }
 
@@ -112,7 +124,7 @@ const Navbar = () => {
 
                 {/* -------------------cartlogin - start---------------------------------------------------------- */}
                 <div className="loginCart">
-                    <p className='icart'><FaUserPlus onClick={openForm} /></p>
+                    <p className='icart' style={logIcon}><FaUserPlus onClick={openForm} /></p>
                     <p className='uName'>{fullName}</p>
                 </div>
                 {/* -------------------cartlogin - end---------------------------------------------------------- */}
@@ -120,6 +132,7 @@ const Navbar = () => {
 
 
             </section>
+            <h2 style={{ color: 'green', fontSize: '20px', textAlign: 'center',backgroundColor:'white',width:'50%',margin:'0 auto' }}>{regi}</h2>
             {/* ====================Section Navbar - End================================= */}
             {/* ====================Section form - Start================================= */}
 
@@ -129,7 +142,6 @@ const Navbar = () => {
                     <h1 className='icon'><RxCross1 onClick={closeForm} /></h1>
                 </div>
                 <form onSubmit={handleSubmit(submit)}>
-                    <h2 style={{ color: 'green', fontSize: '20px' }}>{regi}</h2>
                     <input className='inp' type="text" {...register("fname", { pattern: { value: /^[A-Za-z]+$/i, message: "please enter character only" } })} name="fullName" id="" required placeholder='Full Name*' onChange={(e) => handleChanges(e)} />
                     {errors.fname && <div className='red' style={style}> {errors.fname.message}</div>}
                     <input className='inp' type="text" {...register("eemail", { pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "please enter email id only" } })} name="email" id="" required placeholder='Email*' onChange={(e) => handleChanges(e)} />
