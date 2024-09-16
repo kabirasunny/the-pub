@@ -28,3 +28,12 @@ export const getCards = async () => {
     console.log(response);
     return response;
 }
+
+export const rsTable = async (data) =>{
+try {
+    const response = await myAxios.post('/table',data).then((response) => response.data);
+    return response;
+} catch (error) {
+    return "faild data"
+}
+}
