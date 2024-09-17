@@ -37,3 +37,9 @@ try {
     return "faild data"
 }
 }
+
+export const getBooking = async () => {
+    const response = await myAxios.get('/booking').then((response) => response.data)
+    console.log(response);
+    return response;
+}
