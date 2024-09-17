@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './Table.css'
-import { rsTable } from '../services/user-service';
+import { getBooking, rsTable } from '../services/user-service';
 
 const Table = () => {
 
@@ -13,14 +13,14 @@ const Table = () => {
         = useForm();
     const userData = JSON.parse(localStorage.getItem('user'));
     const [data, setData] = useState({
-        guest: '',
+        guests: '',
         date: '',
         time: '',
         number: userData.number
     })
 
     const handleChanges = (e) => {
-        setData({ ...data, [e.target.guest]: e.target.value })
+        setData({ ...data, [e.target.name]: e.target.value })
     }
     const [tlMsg, setTlMsg] = useState('');
     const reserveTable = () => {
@@ -30,6 +30,36 @@ const Table = () => {
             setTlMsg(error + "Data faild");
         })
     }
+
+    const bookingHtml = document.querySelector('.bookingCard');
+    const listBooking = [];
+    console.log(listBooking)
+
+    const showBook = () => {
+        bookingHtml.innerHTML = '';
+        if (listBooking.length > 0) {
+            listBooking.forEach(book => {
+                let newCard = document.createElement('div');
+                newCard.classList.add('bkCards');
+                newCard.innerHTML = `<div className='bkTitle'>Your Booking</div>
+                        <div className="guestNo">Guest:${book.guests}</div>
+                        <div className="bkDate">Date:${book.date}</div>
+                        <div className="bkTime">Time:${book.time}</div>`;
+                bookingHtml.appendChild(newCard);
+            })
+        }
+    }
+
+    const initCard = () => {
+        getBooking().then((data) => {
+            listBooking = data;
+            showBook();
+        }).catch((error) => {
+            console.log("error");
+        })
+    }
+
+
 
     return (
         <>
@@ -41,7 +71,7 @@ const Table = () => {
                 <form onSubmit={handleSubmit(reserveTable)} className='form'>
                     <div className="fmGDT">
                         <div className="partySize">
-                            <select name="guest" id="" onChange={(e) => handleChanges(e)}>
+                            <select name="guests" id="" onChange={(e) => handleChanges(e)}>
                                 <option value="1 guest">1 Guest</option>
                                 <option value="2 guests">2 Guests</option>
                                 <option value="3 guests">3 Guests</option>
@@ -54,7 +84,7 @@ const Table = () => {
                             <input type="date" name="date" id="" placeholder='Date' onChange={(e) => handleChanges(e)} />
                         </div>
                         <div className='time'>
-                            <select name="time" id="">
+                            <select name="time" id="" onChange={(e) => handleChanges(e)}>
                                 <option value="12:00 PM">12:00 PM</option>
                                 <option value="12:15 PM">12:15 PM</option>
                                 <option value="12:30 PM">12:30 PM</option>
@@ -89,6 +119,12 @@ const Table = () => {
                         <div className="fmTm">3:00 PM</div>
                         <div className="fmTm">3:15 PM</div>
                         <div className="fmTm">3:30 PM</div>
+                    </div>
+                    <div className='booking' onClick={initCard}>Show booking</div>
+                    <div className="bookingCard">
+                        <div className='bkCards'>
+                            <div className='bkTitle'>Your Booking</div>
+                        </div>
                     </div>
                     <button type="submit">Save</button>
                 </form>
