@@ -54,12 +54,10 @@ const Table = () => {
         getBooking().then((data) => {
             listBooking = data;
             showBook();
-        }).catch((error) => {
-            console.log("error");
+        }).catch((error)=>{
+            console.log(error)
         })
     }
-
-
 
     return (
         <>
@@ -122,9 +120,6 @@ const Table = () => {
                     </div>
                     <div className='booking' onClick={initCard}>Show booking</div>
                     <div className="bookingCard">
-                        <div className='bkCards'>
-                            <div className='bkTitle'>Your Booking</div>
-                        </div>
                     </div>
                     <button type="submit">Save</button>
                 </form>
