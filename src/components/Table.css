@@ -62,8 +62,33 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 50px 0;
+    margin-top: 50px;
     gap: 20px;
+}
+
+.reserveTbl .form .booking {
+    color: #fff;
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.reserveTbl .form .bookingCard {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+.reserveTbl .form .bookingCard .bkTitle {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.reserveTbl .form .bookingCard div {
+    color: #fff;
 }
 
 .reserveTbl .form .fmTimes .fmTm {
@@ -90,7 +115,7 @@
     cursor: pointer;
 }
 
-.reserveTbl .form button:hover{
+.reserveTbl .form button:hover {
     background-color: #BF9515;
     transition: background-color 1s ease;
 }
