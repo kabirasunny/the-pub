@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './About.css'
 import { useForm } from 'react-hook-form';
 import { contact } from '../services/user-service';
@@ -18,13 +18,13 @@ const About = () => {
             message:''
         })
 
-        const handleChanges = (e) => {
+        const handleChange = (e) => {
 
             setData({ ...data, [e.target.name]: e.target.value })
         }
 
         const submit = () =>{
-            data.trim();
+            data.trim;
             contact(data).then((resp)=>{
                 alert(resp);
             }).catch((error)=>{
