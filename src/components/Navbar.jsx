@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Navbar.css'
 import { FaCartPlus, FaUserPlus } from "react-icons/fa";
-import { IoMdArrowDropdown } from "react-icons/io";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
@@ -70,6 +70,7 @@ const Navbar = () => {
     const [loginData, setLoginData] = useState('');
     const [fullName, setFullName] = useState();
     const [logIcon, setLogIcon] = useState();
+    const [logout, setLogout] = useState({ display: 'none' });
 
     const handleChange = (e) => {
         setLoginData(e.target.value);
@@ -81,7 +82,7 @@ const Navbar = () => {
             localStorage.setItem('user', JSON.stringify(data));
             const userData = JSON.parse(localStorage.getItem('user'));
             setFullName(userData.fullName);
-            console.log(userData)
+            setLogout({ display: 'block' })
             setRegisterErr('');
             console.log("success login");
             closeForm()
@@ -92,6 +93,13 @@ const Navbar = () => {
             console.log("error login");
             setLogIcon({ display: 'block' })
         })
+    }
+
+    const logoutHandle = ()=>{
+        localStorage.clear();
+        setFullName('');
+        setLogout({ display: 'none' })
+        setLogIcon({ display: 'block' })
     }
 
     const style = {
@@ -126,13 +134,15 @@ const Navbar = () => {
                 <div className="loginCart">
                     <p className='icart' style={logIcon}><FaUserPlus onClick={openForm} /></p>
                     <p className='uName'>{fullName}</p>
+                    <p className='uName'><RiLogoutCircleRLine style={logout} onClick={logoutHandle}/></p>
+
                 </div>
                 {/* -------------------cartlogin - end---------------------------------------------------------- */}
 
 
 
             </section>
-            <h2 style={{ color: 'green', fontSize: '20px', textAlign: 'center',backgroundColor:'white',width:'50%',margin:'0 auto' }}>{regi}</h2>
+            <h2 style={{ color: 'green', fontSize: '20px', textAlign: 'center', backgroundColor: 'white', width: '50%', margin: '0 auto' }}>{regi}</h2>
             {/* ====================Section Navbar - End================================= */}
             {/* ====================Section form - Start================================= */}
 
