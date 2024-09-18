@@ -43,3 +43,12 @@ export const getBooking = async () => {
     console.log(response);
     return response;
 }
+
+export const contact = async (data) =>{
+    try {
+        const response = await myAxios.post('/contact',data).then((response) => response.data);
+        return response;
+    } catch (error) {
+        return "faild data"
+    }
+    }
