@@ -1,7 +1,38 @@
 import React from 'react'
 import './About.css'
+import { useForm } from 'react-hook-form';
+import { contact } from '../services/user-service';
 
 const About = () => {
+    const { register,
+        handleSubmit,
+        watch,
+        setError,
+        formState: { errors } }
+        = useForm();
+        
+        const [data, setData] = useState({
+            fullName: '',
+            email: '',
+            number: '',
+            message:''
+        })
+
+        const handleChanges = (e) => {
+
+            setData({ ...data, [e.target.name]: e.target.value })
+        }
+
+        const submit = () =>{
+            data.trim();
+            contact(data).then((resp)=>{
+                alert(resp);
+            }).catch((error)=>{
+                alert(error);
+            })
+        }
+
+
     return (
         <>
             <section className="about">
@@ -24,11 +55,11 @@ const About = () => {
                     <div className="acLine"><div></div></div>
                     <h1 className="formTitle">Contact Us</h1>
                     <p className="formPara">Contact us to book a table for any occasion. We accept reservations for up to 20 people.</p>
-                    <form action="">
-                        <input type="text" name="" id="" placeholder='Name' />
-                        <input type="email" name="" id="" placeholder='Email' />
-                        <input type="tel" name="" id="" placeholder='Phone' />
-                        <textarea name="" id="" placeholder='Type Your Message Here...'></textarea>
+                    <form onSubmit={handleSubmit(submit)}>
+                        <input type="text" name="fullName" id="" placeholder='Name' required onChange={(e) => handleChange(e)} />
+                        <input type="email" name="email" id="" placeholder='Email' required onChange={(e) => handleChange(e)} />
+                        <input type="tel" name="number" id="" placeholder='Phone' required onChange={(e) => handleChange(e)} />
+                        <textarea name="message" id="" placeholder='Type Your Message Here...' required onChange={(e) => handleChange(e)} ></textarea>
                         <button type='submit'>Submit</button>
                     </form>
                 </div>
