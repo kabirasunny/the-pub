@@ -111,11 +111,14 @@ const OrderOnline = () => {
 
 
 
-
-            {/* ======================OrderOnline Section - start=============================== */}
             <section className="odrOnlineSection" >
-                {/* <h1 className="odrTitle">Order Online</h1> */}
                 <div className='titleCart'>
+                    <h1 className='odrTitle'>Order Online Coming Soon!</h1>
+                </div>
+            </section>
+            {/* ======================OrderOnline Section - start=============================== */}
+            {/* <section className="odrOnlineSection" > */}
+            {/* <div className='titleCart'>
                     <h1 className='odrTitle'>Order Online</h1>
                     <p className='icart odrTitle'><FaCartPlus onClick={openCart} /></p>
                 </div>
@@ -147,10 +150,10 @@ const OrderOnline = () => {
                 <div className="odrBtn">
                     <button className='btn' onClick={openHandle}>Pickup</button>
                     <button className='btn' onClick={openHandle}>Delivery</button>
-                </div>
+                </div> */}
 
-                {/* ----------------------------------------------------------------------------------------- */}
-                <div className="pickupDelivery" style={dis}>
+            {/* ----------------------------------------------------------------------------------------- */}
+            {/* <div className="pickupDelivery" style={dis}>
                     <i className="fa-solid fa-xmark" onClick={closeHandle}></i>
                     <h1>How would you like to receive your order ?</h1>
                     <div className="pdBtn">
@@ -188,22 +191,22 @@ const OrderOnline = () => {
                         </div><br />
                         <button type='submit'>Save</button>
                     </form>
-                </div>
+                </div> */}
 
-                {/* ----------------------------------------------------------------------------------------- */}
+            {/* ----------------------------------------------------------------------------------------- */}
 
-                <div className="odrPickup">
+            {/* <div className="odrPickup">
                     <p className="pickup">Pickup time: <span>{value}</span><button onClick={openHandle}>change</button></p>
                     <p className="address">Pickup address: USA ,CA</p>
                 </div>
                 <div className="odrLine"><div></div></div>
-            </section>
+            </section> */}
             {/* ======================OrderOnline Section - end=============================== */}
 
 
 
             {/* ======================OrderMenu Section - start=============================== */}
-            <section className="odrMenuSection">
+            {/* <section className="odrMenuSection">
                 <div className="odrMenu">
                     <div className="selectMenu">
                         <a href="#cdApp">Appetizers</a>
@@ -304,21 +307,21 @@ const OrderOnline = () => {
                         <h1 className="cardTitle">Fish & Chips</h1>
                         <p className="cardPrice"><i className="fa-solid fa-rupee-sign"></i> 160</p>
                     </div>
-                </div>
+                </div> */}
 
-                {/* -------------addCard---------------------------------  */}
-                <div className="addCard" style={acdHide}>
+            {/* -------------addCard---------------------------------  */}
+            {/* <div className="addCard" style={acdHide}>
                     <p className="acdIcon" onClick={closeAddCardHandle}><RxCross1 /></p>
                     <img src={src} alt="" />
                     <h1 className="aCardTitle">{cdTitle}</h1>
                     <p className="aCardPara">{cdPara}</p>
                     <button className='aCardBtn'>Add Now | {cdPrice}</button>
-                </div>
-                {/* -------------addCard--------------------------------- */}
+                </div> */}
+            {/* -------------addCard--------------------------------- */}
 
 
-                <div className="odrLine"><div></div></div>
-            </section>
+            {/* <div className="odrLine"><div></div></div>
+            </section> */}
             {/* ======================OrderMenu Section - end=============================== */}
         </>
     )
