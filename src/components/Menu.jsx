@@ -31,11 +31,6 @@ const Menu = () => {
             })
     }
     initCard();
-
-    const [posititon, setPosition] = useState();
-    const openCart = () => {
-        setPosition({ right: '0px' })
-    }
     return (
         <>
             {/* ========================lunchMenu Section- Start============================ */}
