@@ -12,30 +12,37 @@ const Table = () => {
         formState: { errors } }
         = useForm();
     const userData = JSON.parse(localStorage.getItem('user'));
+    let num;
+    if (userData === null) {
+        num = '';
+    } else {
+        num = userData.number;
+    }
     const [data, setData] = useState({
         guests: '',
         date: '',
         time: '',
-        number: userData.number
+        number: num
     })
 
     const handleChanges = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
-    const [tlMsg, setTlMsg] = useState('');
+
     const reserveTable = () => {
         rsTable(data).then((resp) => {
-            setTlMsg(resp);
+            alert(resp);
         }).catch((error) => {
-            setTlMsg(error + "Data faild");
+            alert(error);
         })
     }
 
     const bookingHtml = document.querySelector('.bookingCard');
     const listBooking = [];
     console.log(listBooking)
-
+const [bkToggle,setBkToggle] = useState({display:'none'});
     const showBook = () => {
+        setBkToggle({display:'block'})
         bookingHtml.innerHTML = '';
         if (listBooking.length > 0) {
             listBooking.forEach(book => {
@@ -54,7 +61,7 @@ const Table = () => {
         getBooking().then((data) => {
             listBooking = data;
             showBook();
-        }).catch((error)=>{
+        }).catch((error) => {
             console.log(error)
         })
     }
@@ -64,7 +71,6 @@ const Table = () => {
             {/* ====================Section Reserve-Table Start========================= */}
             <section className="reserveTbl">
                 <h1 className='reserveTitle'>Make a reservation</h1>
-                <p style={{ color: 'white', fontSize: '25px', width: '100%', textAlign: 'center' }}>{tlMsg}</p>
                 <p className="reservePara">To help us find the best table for you, select the preferred party size, date, and time of your reservation.</p>
                 <form onSubmit={handleSubmit(reserveTable)} className='form'>
                     <div className="fmGDT">
@@ -119,7 +125,7 @@ const Table = () => {
                         <div className="fmTm">3:30 PM</div>
                     </div>
                     <div className='booking' onClick={initCard}>Show booking</div>
-                    <div className="bookingCard">
+                    <div className="bookingCard" style={bkToggle}>
                     </div>
                     <button type="submit">Save</button>
                 </form>
