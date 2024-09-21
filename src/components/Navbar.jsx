@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { FaCartPlus, FaUserPlus } from "react-icons/fa";
 import { RiLogoutCircleRLine } from "react-icons/ri";
@@ -95,12 +95,31 @@ const Navbar = () => {
         })
     }
 
-    const logoutHandle = ()=>{
+    const logoutHandle = () => {
         localStorage.clear();
         setFullName('');
         setLogout({ display: 'none' })
         setLogIcon({ display: 'block' })
     }
+
+    function displayLogin() {
+        const userData = JSON.parse(localStorage.getItem('user'));
+        if (userData === null) {
+            setFullName('');
+            setLogout({ display: 'none' })
+            setLogIcon({ display: 'block' })
+        } else {
+            setFullName(userData.fullName);
+            setLogout({ display: 'block' })
+            setLogIcon({ display: 'none' })
+        }
+    }
+
+    // useEffect(() => {
+    //     displayLogin();
+    // }, [logoutHandle]);
+
+
 
     const style = {
         color: 'red'
@@ -134,7 +153,7 @@ const Navbar = () => {
                 <div className="loginCart">
                     <p className='icart' style={logIcon}><FaUserPlus onClick={openForm} /></p>
                     <p className='uName'>{fullName}</p>
-                    <p className='uName'><RiLogoutCircleRLine style={logout} onClick={logoutHandle}/></p>
+                    <p className='uName'><RiLogoutCircleRLine style={logout} onClick={logoutHandle} /></p>
 
                 </div>
                 {/* -------------------cartlogin - end---------------------------------------------------------- */}
