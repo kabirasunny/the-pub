@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Menu.css'
 import { getCards } from '../services/user-service';
 
 const Menu = () => {
-    let presentHtml = document.querySelector(".menuBox");
+    const myRef = useRef(null);
     let listCards = [];
 
-    const addDataToHtml = () => {
-        presentHtml.innerHTML = '';
+    const addDataToHtml = () => {   
+        myRef.current.initCard = '';
         if (listCards.length > 0) {
             listCards.forEach(card => {
                 console.log(typeof (card.title))
@@ -16,7 +16,7 @@ const Menu = () => {
                 newCards.dataset.id = card.id;
                 newCards.innerHTML = `<img src="${card.image}" alt="" />
                         <h1>${card.title}</h1>`;
-                presentHtml.appendChild(newCards);
+                myRef.current.appendChild(newCards);
             })
         }
     }
@@ -24,7 +24,7 @@ const Menu = () => {
     const initCard = () => {
         getCards().then((allCards) => {
             listCards = allCards;
-            addDataToHtml();
+                addDataToHtml();
         })
             .catch((error) => {
                 console.log(error + "faild card data");
@@ -39,7 +39,7 @@ const Menu = () => {
                     <h1>Menu</h1>
                 </div>
 
-                <div className="menuBox">
+                <div className="menuBox" ref={myRef}>
                 </div>
                 <div className="bottomLine"><div></div></div>
             </section>
