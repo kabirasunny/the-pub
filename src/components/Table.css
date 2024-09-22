@@ -75,11 +75,22 @@
 }
 
 .reserveTbl .form .bookingCard {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.reserveTbl .form .bookingCard {
     width: 50%;
     height: 100%;
     margin: 0 auto;
     border: 1px solid #fff;
     padding: 10px;
+}
+
+.reserveTbl .form .bookingCard .bkCards {
+    width: 100%;
 }
 
 .reserveTbl .form .bookingCard .bkTitle {
