@@ -29,13 +29,13 @@ export const getCards = async () => {
     return response;
 }
 
-export const rsTable = async (data) =>{
-try {
-    const response = await myAxios.post('/table',data).then((response) => response.data);
-    return response;
-} catch (error) {
-    return "faild data"
-}
+export const rsTable = async (data) => {
+    try {
+        const response = await myAxios.post('/table', data).then((response) => response.data);
+        return response;
+    } catch (error) {
+        return "faild data"
+    }
 }
 
 export const getBooking = async () => {
@@ -44,11 +44,16 @@ export const getBooking = async () => {
     return response;
 }
 
-export const contact = async (data) =>{
+export const contact = async (data) => {
     try {
-        const response = await myAxios.post('/contact',data).then((response) => response.data);
+        const response = await myAxios.post('/contact', data).then((response) => response.data);
         return response;
     } catch (error) {
         return "faild data"
     }
-    }
+}
+
+export const setCard = async (data) => {
+    const response = await myAxios.post('/allCards', data).then((response) => response.data);
+    return response;
+}
