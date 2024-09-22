@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './Table.css'
 import { getBooking, rsTable } from '../services/user-service';
@@ -37,33 +37,33 @@ const Table = () => {
         })
     }
 
-    const bookingHtml = document.querySelector('.bookingCard');
-    const listBooking = [];
+    const bookingCard = useRef(null);
+    let listBooking = [];
     console.log(listBooking)
-const [bkToggle,setBkToggle] = useState({display:'none'});
+    const [bkToggle, setBkToggle] = useState({ display: 'none' });
     const showBook = () => {
-        setBkToggle({display:'block'})
-        bookingHtml.innerHTML = '';
+        setBkToggle({ display: 'flex' })
+        bookingCard.current.innerHTML = '';
         if (listBooking.length > 0) {
             listBooking.forEach(book => {
                 let newCard = document.createElement('div');
                 newCard.classList.add('bkCards');
-                newCard.innerHTML = `<div className='bkTitle'>Your Booking</div>
-                        <div className="guestNo">Guest:${book.guests}</div>
-                        <div className="bkDate">Date:${book.date}</div>
-                        <div className="bkTime">Time:${book.time}</div>`;
-                bookingHtml.appendChild(newCard);
+                newCard.innerHTML = `
+                        <div className="guestNo">Guest: ${book.guests}</div>
+                        <div className="bkDate">Date: ${book.date}</div>
+                        <div className="bkTime">Time: ${book.time}</div>`; 
+                bookingCard.current.appendChild(newCard);
             })
         }
     }
 
-    const initCard = () => {
-        getBooking().then((data) => {
-            listBooking = data;
+    const handleBooking = () => {
+        getBooking().then((resp) => {
+            listBooking = resp;
             showBook();
         }).catch((error) => {
-            console.log(error)
-        })
+            console.log(error);
+        });
     }
 
     return (
@@ -124,8 +124,8 @@ const [bkToggle,setBkToggle] = useState({display:'none'});
                         <div className="fmTm">3:15 PM</div>
                         <div className="fmTm">3:30 PM</div>
                     </div>
-                    <div className='booking' onClick={initCard}>Show booking</div>
-                    <div className="bookingCard" style={bkToggle}>
+                    <div className='booking' onClick={handleBooking}>Show booking</div>
+                    <div className="bookingCard" ref={bookingCard} style={bkToggle}>
                     </div>
                     <button type="submit">Save</button>
                 </form>
