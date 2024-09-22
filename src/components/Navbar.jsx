@@ -5,7 +5,7 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
-import { signUp, getUser } from '../services/user-service';
+import { signUp, getUser, setCard } from '../services/user-service';
 import OrderOnline from './OrderOnline';
 import { useForm } from 'react-hook-form';
 
@@ -52,17 +52,11 @@ const Navbar = () => {
     const [registerErr, setRegisterErr] = useState('');
     const submit = (e) => {
         signUp(data).then((resp) => {
-            if (data.number === '') {
-                setRegi("Registration Faild, Please try again");
-            } else {
-                setRegi("Registration Successful!");
-                setRegisterErr('');
-                closeForm();
-            }
+            setRegi(resp);
+            setRegisterErr('');
+            closeForm();
         }).catch((error) => {
             setRegisterErr("Registration Faild, Please try again");
-            console.log(error);
-            console.log("error log");
         })
 
     }
@@ -81,16 +75,21 @@ const Navbar = () => {
         getUser(logData, data).then((data) => {
             localStorage.setItem('user', JSON.stringify(data));
             const userData = JSON.parse(localStorage.getItem('user'));
-            setFullName(userData.fullName);
-            setLogout({ display: 'block' })
-            setRegisterErr('');
-            console.log("success login");
-            closeForm()
-            setLogIcon({ display: 'none' })
+            if (userData.number === 1020304050) {
+                openAdmin();
+            } else {
+                setFullName(userData.fullName);
+                setLogout({ display: 'block' })
+                setRegisterErr('');
+                closeForm()
+                setLogIcon({ display: 'none' })
+            }
         }).catch((error) => {
-            setRegisterErr("please enter correct number !");
-            console.log(error);
-            console.log("error login");
+
+            setRegisterErr("Please register before login !");
+            setTimeout(() => {
+                setRegisterErr('');
+            }, 5000)
             setLogIcon({ display: 'block' })
         })
     }
@@ -123,6 +122,34 @@ const Navbar = () => {
 
     const style = {
         color: 'red'
+    }
+    const [adminHide, setAdminHide] = useState({ display: 'none' });
+    const closeAdmin = () => {
+        setAdminHide({
+            display: 'none'
+        })
+    }
+
+    const openAdmin = () => {
+        setAdminHide({ display: 'block' });
+        closeForm();
+    }
+
+    const [admin, setAdmin] = useState({
+        image: '',
+        title: ''
+    })
+
+    const changes = (e) => {
+        setAdmin({ ...data, [e.target.name]: e.target.value })
+    }
+    const [admsg, setAdmsg] = useState('');
+    const handleAdmin = () => {
+        setCard(admin).then((resp) => {
+            setAdmsg(resp);
+        }).catch((error) => {
+            setAdmsg(error);
+        })
     }
 
     return (
@@ -192,12 +219,22 @@ const Navbar = () => {
                 <form onSubmit={handleSubmit(login)}>
                     <h2 style={{ color: 'red', fontSize: '20px' }}>{registerErr}</h2>
                     <input className='inp' type="tel" name="number" id="" required placeholder='Number*' onChange={(e) => handleChange(e)} />
-                    <button type='submit' className='btn2'>Send One Time Password</button>
+                    <button type='submit' className='btn2'>Login</button>
                 </form>
             </section>
-
-
             {/* ====================Section form - End================================= */}
+            {/* ========================Section Admin -start=============================== */}
+            <section className="adminSection" style={adminHide}>
+                <p><RxCross1 onClick={closeAdmin} /></p>
+                <form onSubmit={handleSubmit(handleAdmin)}>
+                    <h2>Admin Desktop</h2>
+                    <p>{admsg}</p>
+                    <input className='inp' type="text" name="image" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
+                    <button type='submit' className='btn2'>Submit</button>
+                </form>
+            </section>
+            {/* ========================Section Admin -end=============================== */}
         </>
     )
 }
