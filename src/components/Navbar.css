@@ -118,7 +118,7 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    left: 30rem;
+    left: 35%;
     z-index: 1000;
     border: 1px solid #fff;
 }
@@ -200,7 +200,7 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    left: 30rem;
+    left: 35%;
     z-index: 1000;
     border: 1px solid #fff;
 }
@@ -262,3 +262,61 @@
 /* ------------------------------login------------------------- */
 
 /* ====================Section form - End================================= */
+/* ========================Section Admin -start=============================== */
+.adminSection {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.adminSection p {
+    font-size: 20px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.adminSection form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 40%;
+    margin: 50px auto;
+    border: 1px solid #fff;
+    padding: 20px;
+}
+
+.adminSection form h2 {
+    color: #fff;
+}
+
+.adminSection form p{
+    color: #fff;
+    text-align: center;
+}
+
+.adminSection form .inp {
+    padding: 8px;
+    background: #fff;
+    border: none;
+}
+
+.adminSection form .btn2 {
+    width: 50%;
+    color: #000;
+    padding: 5px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.adminSection form .btn2:hover {
+    background-color: #BF9515;
+    color: #fff;
+}
+
+/* ========================Section Admin -end=============================== */
