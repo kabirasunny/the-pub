@@ -10,27 +10,27 @@ const About = () => {
         setError,
         formState: { errors } }
         = useForm();
-        
-        const [data, setData] = useState({
-            fullName: '',
-            email: '',
-            number: '',
-            message:''
+
+    const [data, setData] = useState({
+        fullName: '',
+        email: '',
+        number: '',
+        message: ''
+    })
+
+    const handleChange = (e) => {
+
+        setData({ ...data, [e.target.name]: e.target.value })
+    }
+
+    const submit = () => {
+        data.trim;
+        contact(data).then((resp) => {
+            alert(resp);
+        }).catch((error) => {
+            alert(error);
         })
-
-        const handleChange = (e) => {
-
-            setData({ ...data, [e.target.name]: e.target.value })
-        }
-
-        const submit = () =>{
-            data.trim;
-            contact(data).then((resp)=>{
-                alert(resp);
-            }).catch((error)=>{
-                alert(error);
-            })
-        }
+    }
 
 
     return (
@@ -41,11 +41,7 @@ const About = () => {
                 </div>
                 <div className="aboutContainer">
                     <h1 className="acTitle">About Us</h1>
-                    <p className="acPara">I'm a paragraph. Click here to add your own text and edit me.
-                        It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
-                        Feel free to drag and drop me anywhere you like on your page.
-                        I’m a great place for you to tell a story and let your users know a little more about you.
-
+                    <p className="acPara">Bar and restaurant equipment, Stainless steel bar and cocktail articles, Bar equipment, Equipment and accessories, Bar equipment, Bottle stoppers, Glasses, Boston shakers, Bottle baskets, Champagne bowls and buckets, Corks with or without spout for wine and champagne, Wine presentation, Vacuvin vacuum pump, Utensils, Measure, Professional equipment for the bartender. Discover the details by clicking on each Art. Nr. Discover all the details by clicking on each item. The jigger is also useful in the kitchen to measure the alcohol content of recipes, especially pastries.
 
 
                         This is a great space to write long text about your company and your services.
