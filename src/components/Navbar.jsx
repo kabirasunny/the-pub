@@ -5,7 +5,7 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
-import { signUp, getUser, setCard, delCard } from '../services/user-service';
+import { signUp, getUser, setCard } from '../services/user-service';
 import OrderOnline from './OrderOnline';
 import { useForm } from 'react-hook-form';
 
@@ -249,14 +249,14 @@ const Navbar = () => {
                 <form onSubmit={handleSubmit(addCard)}>
                     <h2>Admin Card Add Desktop</h2>
                     <p>{admsg}</p>
-                    <input className='inp' type="text" name="image" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
-                    <input className='inp' type="text" name="title" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="image" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
                     <button style={{ backgroundColor: 'green' }} type='submit' className='btn2'>Add</button>
                 </form>
-                <form style={{ display: 'none' }} onSubmit={handleSubmit(deleteCard)}>
+                <form onSubmit={handleSubmit(deleteCard)}>
                     <h2>Admin Card Delete Desktop</h2>
                     <p>{admsg}</p>
-                    <input className='inp' type="text" name="title" id="" required placeholder='Image title name*' onChange={(e) => delChanges(e)} />
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => delChanges(e)} />
                     <button style={{ backgroundColor: 'red' }} type='submit' className='btn2'>Delete</button>
                 </form>
             </section>
