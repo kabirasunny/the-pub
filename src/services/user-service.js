@@ -57,3 +57,9 @@ export const setCard = async (data) => {
     const response = await myAxios.post('/allCards', data).then((response) => response.data);
     return response;
 }
+
+export const delCard = async (title) => {
+    console.log("sfdoldsfksdfkls"+title)
+    const response = await myAxios.delete(`/deleteCard/${title}`).then((response) => response.data);
+    return response;
+}
