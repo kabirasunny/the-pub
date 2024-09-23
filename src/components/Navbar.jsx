@@ -5,7 +5,7 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowForward } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
-import { signUp, getUser, setCard } from '../services/user-service';
+import { signUp, getUser, setCard, delCard } from '../services/user-service';
 import OrderOnline from './OrderOnline';
 import { useForm } from 'react-hook-form';
 
@@ -131,7 +131,7 @@ const Navbar = () => {
     }
 
     const openAdmin = () => {
-        setAdminHide({ display: 'block' });
+        setAdminHide({ display: 'flex' });
         closeForm();
     }
 
@@ -144,8 +144,28 @@ const Navbar = () => {
         setAdmin({ ...data, [e.target.name]: e.target.value })
     }
     const [admsg, setAdmsg] = useState('');
-    const handleAdmin = () => {
+    const addCard = () => {
         setCard(admin).then((resp) => {
+            setAdmsg(resp);
+        }).catch((error) => {
+            setAdmsg(error);
+        })
+    }
+
+    const [del, setDel] = useState({
+        title: ''
+    })
+
+    const delChanges = (e) => {
+        setDel(e.target.value)
+    }
+
+    console.log(del)
+
+    const deleteCard = () => {
+        const dt = del.trim();
+        console.log(dt)
+        delCard(dt).then((resp) => {
             setAdmsg(resp);
         }).catch((error) => {
             setAdmsg(error);
@@ -226,12 +246,18 @@ const Navbar = () => {
             {/* ========================Section Admin -start=============================== */}
             <section className="adminSection" style={adminHide}>
                 <p><RxCross1 onClick={closeAdmin} /></p>
-                <form onSubmit={handleSubmit(handleAdmin)}>
-                    <h2>Admin Desktop</h2>
+                <form onSubmit={handleSubmit(addCard)}>
+                    <h2>Admin Card Add Desktop</h2>
                     <p>{admsg}</p>
-                    <input className='inp' type="text" name="image" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
-                    <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
-                    <button type='submit' className='btn2'>Submit</button>
+                    <input className='inp' type="text" name="image" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
+                    <button style={{backgroundColor:'green'}} type='submit' className='btn2'>Add</button>
+                </form>
+                <form style={{display:'none'}} onSubmit={handleSubmit(deleteCard)}>
+                    <h2>Admin Card Delete Desktop</h2>
+                    <p>{admsg}</p>
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image title name*' onChange={(e) => delChanges(e)} />
+                    <button style={{backgroundColor:'red'}} type='submit' className='btn2'>Delete</button>
                 </form>
             </section>
             {/* ========================Section Admin -end=============================== */}
