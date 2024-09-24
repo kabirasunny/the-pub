@@ -83,6 +83,7 @@ const Navbar = () => {
             const userData = JSON.parse(localStorage.getItem('user'));
             if (userData.number === 1020304050) {
                 openAdmin();
+                localStorage.clear();
             } else {
                 setFullName(userData.fullName);
                 setLogout({ display: 'block' })
@@ -147,7 +148,7 @@ const Navbar = () => {
     })
 
     const changes = (e) => {
-        setAdmin({ ...data, [e.target.name]: e.target.value })
+        setAdmin({ ...admin, [e.target.name]: e.target.value })
     }
     const [admsg, setAdmsg] = useState('');
     const addCard = () => {
@@ -255,11 +256,11 @@ const Navbar = () => {
                 <form onSubmit={handleSubmit(addCard)}>
                     <h2>Admin Card Add Desktop</h2>
                     <p>{admsg}</p>
-                    <input className='inp' type="text" name="image" id="" required placeholder='Image title name*' onChange={(e) => changes(e)} />
-                    <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="image" id="" required placeholder='Image path' onChange={(e) => changes(e)} />
+                    <input className='inp' type="text" name="title" id="" required placeholder='Image title name' onChange={(e) => changes(e)} />
                     <button style={{ backgroundColor: 'green' }} type='submit' className='btn2'>Add</button>
                 </form>
-                <form onSubmit={handleSubmit(deleteCard)}>
+                <form style={{display:'none'}} onSubmit={handleSubmit(deleteCard)}>
                     <h2>Admin Card Delete Desktop</h2>
                     <p>{admsg}</p>
                     <input className='inp' type="text" name="title" id="" required placeholder='Image path*' onChange={(e) => delChanges(e)} />
