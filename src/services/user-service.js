@@ -38,8 +38,8 @@ export const rsTable = async (data) => {
     }
 }
 
-export const getBooking = async () => {
-    const response = await myAxios.get('/booking').then((response) => response.data);
+export const getBooking = async (data) => {
+    const response = await myAxios.get(`/booking/${data}`).then((response) => response.data);
     console.log(response);
     return response;
 }
