@@ -58,7 +58,8 @@ const Table = () => {
     }
 
     const handleBooking = () => {
-        getBooking().then((resp) => {
+        const dt = JSON.parse(localStorage.getItem('user'));
+        getBooking(dt.number).then((resp) => {
             listBooking = resp;
             showBook();
         }).catch((error) => {
