@@ -6,15 +6,13 @@
     justify-content: center;
 }
 
-.firstSection .videoDiv {
+.firstSection .imageDiv {
     width: 90%;
 
 }
 
-.firstSection .videoDiv video {
+.firstSection .imageDiv img {
     width: 100%;
-    filter: drop-shadow(1px 1px 2px #000);
-    border-radius: 0.5rem;
 }
 
 .firstSection .videoDiv #myBtn {
@@ -62,7 +60,7 @@
     cursor: pointer;
 }
 
-.cards .card .rmBtn:hover{
+.cards .card .rmBtn:hover {
     color: #fff;
 }
 
@@ -91,7 +89,7 @@
 /* ==================Section Reserve Table - Start================= */
 .reserveTbl {
     width: 74%;
-    margin:15px auto;
+    margin: 15px auto;
 }
 
 .reserveTbl .reserveTitle {
@@ -136,7 +134,7 @@
     text-align: center;
 }
 
-.reserveTbl form .fdTable:hover{
+.reserveTbl form .fdTable:hover {
     background-color: #000;
 }
 
