@@ -52,9 +52,15 @@ const Navbar = () => {
     const [registerErr, setRegisterErr] = useState('');
     const submit = (e) => {
         signUp(data).then((resp) => {
-            setRegi(resp);
-            setRegisterErr('');
-            closeForm();
+            if (resp === '') {
+                setRegi("Server error! please try again");
+                setRegisterErr('');
+                closeForm();
+            } else {
+                setRegi(resp);
+                setRegisterErr('');
+                closeForm();
+            }
         }).catch((error) => {
             setRegisterErr("Registration Faild, Please try again");
         })
