@@ -6,10 +6,8 @@ const Home = () => {
         <>
             {/* ====================Section video Start========================= */}
             <section className="firstSection">
-                <div className="videoDiv">
-                    <video id='myVideo' autoPlay muted loop src='./src/video/BIG-BANG.mp4'>
-                    </video>
-                    <button id='myBtn' hidden>Pause</button>
+                <div className="imageDiv">
+                    <img src="./src/image/thepub.jpg" alt="" />
                 </div>
             </section>
             {/* ====================Section video End========================= */}
